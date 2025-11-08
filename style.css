@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 10%;
+}
+
+.section {
+  border: 1px solid;
+  padding: 30px;
+}
+
+.section-header {
+  border: 1px solid;
+  margin-bottom: 25px;
+}
+
+.brands-container {
+  border: 1px solid;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.brand-card {
+  border: 1px solid;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 170px;
+  height: 100px;
+}
+
+.footer {
+  background-color: #272a41;
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.footer-section {
+  border: 1px solid;
+}
+.footer-section h3 {
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* .social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+} */
+
+.social-links a {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin: 40px;
+  /* padding: 20px; */
+  /* border-top: 1px solid #34495e; */
+  /* color: #bdc3c7; */
+}

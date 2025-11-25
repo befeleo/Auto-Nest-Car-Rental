@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AutoNest — About & Contact</title>
+  <meta name="description" content="About AutoNest Car Racing Game — team, mission, contact info and quick contact form.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#ff6b00;--glass: rgba(255,255,255,0.03);--radius:12px;font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071028 0%, #071430 100%);color:#e6eef8;line-height:1.5}
+    a{color:var(--accent);text-decoration:none}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent}
+    .logo{display:flex;gap:12px;align-items:center}.logo svg{width:44px;height:44px}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{background:var(--accent);color:#071022;padding:10px 14px;border-radius:10px;font-weight:600}
+    main{max-width:1100px;margin:28px auto;padding:22px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 12px}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{background:var(--glass);padding:10px;border-radius:10px;font-weight:600}
+    .about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:16px}
+    .feature{padding:14px;background:rgba(255,255,255,0.02);border-radius:10px}
+    .team{display:flex;flex-direction:column;gap:12px}.team-list{display:flex;flex-wrap:wrap;gap:12px}
+    .member{display:flex;gap:10px;align-items:center;padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:10px}
+    .avatar{width:48px;height:48px;border-radius:10px;display:inline-grid;place-items:center;background:linear-gradient(180deg,#0b1220,#081026);border:1px solid rgba(255,255,255,0.03);font-weight:700}
+    .contact-column{position:relative}form{display:flex;flex-direction:column;gap:10px}input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit;outline:none}input:focus,textarea:focus,select:focus{border-color:rgba(255,107,0,0.9);box-shadow:0 6px 18px rgba(255,107,0,0.08)}label{font-size:13px;color:var(--muted)}.small{font-size:13px;color:var(--muted)}.row{display:flex;gap:10px}.row > *{flex:1}.map{height:160px;border-radius:10px;background:linear-gradient(180deg,#071826,#052033);display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed rgba(255,255,255,0.03)}footer{margin-top:20px;padding:22px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}@media (max-width:980px){.hero{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}}@media (max-width:600px){header{padding:12px}main{padding:12px}h1{font-size:22px}}.toast{position:fixed;right:18px;bottom:18px;background:#052433;padding:14px;border-radius:10px;border-left:4px solid var(--accent);box-shadow:0 8px 30px rgba(2,6,23,0.6);display:none}.toast.show{display:block}
+  </style>
+</head>
+<body>
+<header><div class="logo"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="48" height="48" rx="10" fill="url(#g)" /><path d="M10 30 L18 18 L30 30 H38" stroke="#071022" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#ff6b00"/></linearGradient></defs></svg><div><div style="font-weight:700">AutoNest</div><div style="font-size:12px;color:var(--muted);margin-top:2px">Car Racing Game — About & Contact</div></div></div><nav><a href="#about">About</a><a href="#team">Team</a><a href="#contact">Contact</a><a class="btn" href="#play">Play Demo</a></nav></header>
+<main>
+<section class="hero">
+<div class="card">
+<h1 id="about">About AutoNest</h1>
+<p class="lead">AutoNest is a Java-based desktop car racing game built to demonstrate strong Object-Oriented Programming practices while delivering smooth, enjoyable gameplay. The project is implemented using Java (JDK 17+) and Java Swing/JavaFX for rendering.</p>
+<div class="stats"><div class="stat">OOP-focused</div><div class="stat">Collision System</div><div class="stat">GitHub Collaboration</div></div>
+<div class="about-grid"><div class="feature"><h3 style="margin:0 0 6px">Purpose</h3><p class="small">To learn and apply encapsulation, inheritance, polymorphism, and abstraction through a playable game that includes movement control and collision detection.</p></div><div class="feature"><h3 style="margin:0 0 6px">Core Features</h3><ul style="margin:0;padding-left:18px;color:var(--muted)"><li>Single-player race</li><li>Car controls: accelerate, steer</li><li>Collision & scoring</li><li>Start / Pause / Restart</li></ul></div></div>
+<div style="margin-top:14px"><a href="https://github.com/befeleo/Auto-Nest-Car-Rental/blob/main/README.md" target="_blank" rel="noopener" class="small">Project README on GitHub</a></div>
+</div>
+<aside class="card contact-column" id="contact">
+<h2 style="margin:0 0 6px">Contact the Team</h2>
+<p class="small">Use this form to send a quick message to the AutoNest team. For code contributions, please follow the Git flow outlined in the project repository.</p>
+<form id="contactForm" onsubmit="return false;"><label for="name">Full name</label><input id="name" type="text" placeholder="Your full name" required><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" required><label for="subject">Subject</label><input id="subject" type="text" placeholder="Short subject" required><label for="message">Message</label><textarea id="message" rows="4" placeholder="Type your message here" required></textarea><div class="row"><button id="sendBtn" class="btn" style="width:100%" type="submit">Send message</button></div><div class="small" style="margin-top:6px">Or reach us directly: <strong>autonest.team@example.com</strong> • +251 9XX XXX XXX</div></form>
+<div style="margin-top:12px"><div class="map">Map placeholder — add embed in production</div></div>
+</aside>
+</section>
+<section class="card" id="team" style="margin-bottom:12px">
+<h2 style="margin:0 0 8px">Project Team</h2>
+<p class="small">Core contributors and their student IDs.</p>
+<div class="team-list">
+<div class="member"><div class="avatar">AS</div><div><div style="font-weight:600">Abenezer Shiferaw Talta</div><div class="small">ETS0067/16</div></div></div>
+<div class="member"><div class="avatar">BK</div><div><div style="font-weight:600">Befiker Kassahun Tessema</div><div class="small">ETS0236/16</div></div></div>
+<div class="member"><div class="avatar">BD</div><div><div style="font-weight:600">Bereket Desalegn Eshete</div><div class="small">ETS0251/16</div></div></div>
+<div class="member"><div class="avatar">BT</div><div><div style="font-weight:600">Bereket Tesfaye Wakshume</div><div class="small">ETS0259/16</div></div></div>
+<div class="member"><div class="avatar">BE</div><div><div style="font-weight:600">Betlihem Degefu Abebe</div><div class="small">ETS0283/16</div></div></div>
+</div>
+<div style="margin-top:12px" class="small"><strong>Expected outcome:</strong> A playable Java-based racing game demonstrating OOP design, smooth gameplay, and documentation. The final build, user guide, and technical docs will be uploaded to GitHub.</div>
+</section>
+</main>
+<footer>
+<p class="small">&copy; AutoNest Team. All rights reserved.</p>
+</footer>
+</body>
+</html>

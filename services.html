@@ -28,7 +28,11 @@
     </header>
 
     <main>
-       <!-- search bar goes here-->
+       <div class="search-bar">
+            <input id="search-input" type="search" placeholder="Search cars by name, description or features..." aria-label="Search cars" />
+            <div id="result-count" class="result-count" aria-live="polite"></div>
+        </div>
+        <div class="search-hint" aria-hidden="true">Try: "Toyota", "AWD", "$80/day" or a feature like "Bluetooth"</div>
 
         <!-- Car cards container -->
         <div id="car-list" class="car-list"></div>

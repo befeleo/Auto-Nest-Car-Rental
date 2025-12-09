@@ -13,32 +13,28 @@ Auto Nest Car Rental website allows users to browse, book, and rent cars with a 
 ## Project Structure
 Auto-Nest-Car-Rental/
 │
-├── index.html              # Home Page
-├── about.html              # About Us Page
-├── services.html           # Car Service Page
-├── contact.html            # Contact Page
-├── car-details.html        # Car Details Page
+├── index.html                 # Home Page
+├── about.html                 # About Us Page
+├── services.html              # Car Service Page
+├── contact.html               # Contact Page
+├── car-details.html           # Car Details Page
 │
 ├── assets/
 │   ├── css/
-│   │   ├── style.css       # Main Stylesheet
-│   │   └── responsive.css  # Responsive Styles
+│   │   ├── style.css          # Main Stylesheet
+│   │   └── responsive.css     # Responsive Styles
 │   │
 │   ├── js/
-│   │   ├── main.js         # Global JavaScript
-│   │   └── car-details.js  # Car Details Logic
+│   │   ├── main.js            # Global JavaScript
+│   │   └── car-details.js     # Car Details Logic
 │   │
 │   ├── images/
 │       ├── logo.png
 │       ├── banners/
-│       └── cars/           # Car Images
+│       └── cars/              # Car Images
 │
 ├── data/
-│   └── cars.json           # Car Data (Model, Price, Specs)
-│
-├── partials/
-│   ├── header.html         # Reusable Navigation Bar
-│   └── footer.html         # Reusable Footer
+│   └── cars.json              # Car Data (Model, Price, Specs)
 │
 ├── README.md
 └── .gitignore

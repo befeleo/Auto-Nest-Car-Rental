@@ -14,12 +14,15 @@
 }
 
 .section-header {
-  border: 1px solid;
   margin-bottom: 25px;
 }
 
+.section-title {
+  border-left: 5px solid red;
+  padding-left: 10px;
+}
+
 .brands-container {
-  border: 1px solid;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
@@ -67,13 +70,15 @@
 .tab-links {
   display: flex;
   list-style: none;
-  border-bottom: 1px solid;
+  border: 1px solid grey;
+  /* border-bottom: none; */
 }
 
 .tab-link {
   flex: 1;
   text-align: center;
-  border: 1px solid;
+  border-bottom: 1px solid red;
+  margin: 0 10px;
 }
 
 .tab-link a {
@@ -104,7 +109,8 @@
 
 .price-option,
 .fuel-option,
-.body-option {
+.body-option,
+.more-option {
   margin-bottom: 5px;
 }
 

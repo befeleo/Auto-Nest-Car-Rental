@@ -124,6 +124,8 @@
   background: #e36800;
 }
 
+/* Todo: Fix the style for about us , remove manual images */
+
 .about-cards {
   display: flex;
   gap: 40px;
@@ -168,13 +170,10 @@
   border-radius: 10px;
 }
 
-/* working */
-
 .car-section {
   width: 85%;
   margin: 40px auto;
   font-family: Arial, sans-serif;
-  /* font family */
 }
 
 .car-section h2 {
@@ -223,10 +222,6 @@
   font-weight: bold;
 }
 
-/* befikr */
-/* .container {
-  margin: 0 10%;
-} */
 .section {
   border: 1px solid;
   padding: 30px;
@@ -236,11 +231,6 @@
 .section-header {
   margin-bottom: 25px;
 }
-
-/* .section-title {
-  border-left: 5px solid red;
-  padding-left: 10px;
-} */
 
 .brands-container {
   display: grid;
@@ -291,7 +281,6 @@
   display: flex;
   list-style: none;
   border: 1px solid grey;
-  /* border-bottom: none; */
 }
 
 .tab-link {
@@ -311,6 +300,14 @@
   padding: 25px 0;
 }
 
+.tab-panel {
+  display: none;
+}
+
+.tab-panel:first-child {
+  display: block;
+}
+
 .filter-options {
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
@@ -318,9 +315,11 @@
 }
 
 .filter-option {
-  padding: 15px;
+  padding: 8px 20px;
+  font-size: 14px;
   text-align: center;
-  border: 1px solid;
+  border: 1px solid #56586a;
+  border-radius: 20px;
 }
 
 .filter-option a {
@@ -370,12 +369,4 @@
   padding: 20px;
   border-top: 1px solid #34495e;
   color: #bdc3c7;
-}
-
-.tab-panel {
-  display: none;
-}
-
-.tab-panel:first-child {
-  display: block;
 }

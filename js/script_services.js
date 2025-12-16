@@ -15,27 +15,27 @@ function showError(message) {
 // Load cars from JSON
 async function loadCars() {
     showLoading();
-    
+
     try {
         console.log('Attempting to load cars.json...');
-        
+
         // Try different paths if needed
-        const response = await fetch('../Data/cars.json');
-        
+        const response = await fetch('../data/cars.json');
+
         if (!response.ok) {
             throw new Error(`Failed to load JSON: ${response.status} ${response.statusText}`);
         }
-        
+
         cars = await response.json();
         console.log(`Successfully loaded ${cars.length} cars`, cars);
-        
+
         displayCars();
-        
+
         // Test if cars are loaded
         if (cars.length > 0) {
             console.log('First car:', cars[0]);
         }
-        
+
     } catch (error) {
         console.error('Error loading cars:', error);
         showError(`Failed to load cars: ${error.message}<br>Check browser console for details.`);
@@ -117,7 +117,7 @@ function showCarDetails(carId) {
 
 function closeDetails() {
     carDetailsContainer.style.display = "none";
-}   
+}
 
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {

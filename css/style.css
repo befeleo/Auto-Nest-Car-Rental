@@ -4,40 +4,31 @@
   box-sizing: border-box;
 }
 
-/* abeni */
-.an-header {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  background: url(/image/pexels-oleksandr-tiupa-53788-192136.jpg);
-  padding: 18px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-}
-.an-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: -1;
-}
-.an-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  padding: 18px 36px;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(6.8px);
+  backdrop-filter: blur(6.8px);
 }
-.an-header-left .logo-text {
+
+.logo {
+  text-decoration: none;
+}
+.logo .logo-text {
   font-size: 28px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 700;
   color: #d40000;
 }
-.an-header-left {
-  text-decoration: none;
-}
-.an-header-middle {
+
+.nav-bar-search {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -46,6 +37,7 @@
   border: 1px solid #ddd;
   border-radius: 6px;
 }
+
 .search {
   border: none;
   outline: none;
@@ -53,69 +45,64 @@
   min-width: 400px;
 }
 
-.an-header-right ul {
+.nav-bar-links ul {
   list-style: none;
   display: flex;
   gap: 25px;
 }
 
-.an-header-right ul li a {
+.nav-bar-links ul li a {
   text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
+  color: #fff;
   font-weight: 500;
   transition: 0.3s;
 }
-.an-header-right ul li a:hover {
+.nav-bar-links ul li a:hover {
   color: #e00000;
 }
 
 .hero {
-  width: 100%;
-  height: 80vh;
-  background: url("../image/pexels-mtime-433312286-16262273.jpg") no-repeat center
-    center/cover;
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 200px;
-  padding-left: 60px;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-}
-.hero-content {
+  justify-content: center;
   position: relative;
-  max-width: 450px;
-  max-height: 450px;
-  padding: 50px 40px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  color: #fff;
+  height: 100vh;
+  background: url("../image/pexels-mtime-433312286-16262273.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: absolute;
+  right: 100px;
+  top: 200px;
+  max-width: 450px;
+  max-height: 450px;
+  padding: 50px 40px;
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.13);
+  -webkit-backdrop-filter: blur(5.4px);
+  backdrop-filter: blur(5.4px);
 }
 
 .hero-content p {
-  text-align: center;
   font-size: 15px;
   line-height: 1.4;
-  opacity: 0.9;
   margin-top: 10px;
 }
 
 .hero-content h1 {
-  font-size: 54px;
+  font-size: 36px;
   font-weight: 700;
 }
-.hero-content h2 {
-  margin-top: 0;
-  font-size: 35px;
+
+.hero-content h1 span {
   font-weight: 600;
   color: #ff1313;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -124,6 +111,7 @@
 .hero-btn {
   padding: 10px 22px;
   font-size: 15px;
+  font-weight: 900;
   border-radius: 6px;
   background: #ff0400;
   color: #fff;
@@ -135,6 +123,8 @@
 .hero-btn:hover {
   background: #e36800;
 }
+
+/* Todo: Fix the style for about us , remove manual images */
 
 .about-cards {
   display: flex;
@@ -180,17 +170,18 @@
   border-radius: 10px;
 }
 
-.popular-cars {
-  width: 90%;
+.car-section {
+  width: 85%;
   margin: 40px auto;
   font-family: Arial, sans-serif;
 }
 
-.popular-cars h2 {
+.car-section h2 {
   font-size: 24px;
-  font-weight: bold;
   margin-bottom: 25px;
   color: #111;
+  border-left: 5px solid red;
+  padding-left: 10px;
 }
 
 .car-grid {
@@ -231,10 +222,6 @@
   font-weight: bold;
 }
 
-/* befikr */
-.container {
-  margin: 0 10%;
-}
 .section {
   border: 1px solid;
   padding: 30px;
@@ -243,11 +230,6 @@
 
 .section-header {
   margin-bottom: 25px;
-}
-
-.section-title {
-  border-left: 5px solid red;
-  padding-left: 10px;
 }
 
 .brands-container {
@@ -299,7 +281,6 @@
   display: flex;
   list-style: none;
   border: 1px solid grey;
-  /* border-bottom: none; */
 }
 
 .tab-link {
@@ -319,6 +300,14 @@
   padding: 25px 0;
 }
 
+.tab-panel {
+  display: none;
+}
+
+.tab-panel:first-child {
+  display: block;
+}
+
 .filter-options {
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
@@ -326,9 +315,11 @@
 }
 
 .filter-option {
-  padding: 15px;
+  padding: 8px 20px;
+  font-size: 14px;
   text-align: center;
-  border: 1px solid;
+  border: 1px solid #56586a;
+  border-radius: 20px;
 }
 
 .filter-option a {
@@ -378,12 +369,4 @@
   padding: 20px;
   border-top: 1px solid #34495e;
   color: #bdc3c7;
-}
-
-.tab-panel {
-  display: none;
-}
-
-.tab-panel:first-child {
-  display: block;
 }

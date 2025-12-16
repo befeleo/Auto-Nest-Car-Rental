@@ -72,7 +72,7 @@
   justify-content: center;
   position: relative;
   height: 100vh;
-  background: url("../images/pexels-mtime-433312286-16262273.jpg");
+  background: url("../assets/images/pexels-mtime-433312286-16262273.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -366,6 +366,7 @@
 
 .social-links a {
   color: white;
+  text-decoration: none;
 }
 
 .footer-bottom {

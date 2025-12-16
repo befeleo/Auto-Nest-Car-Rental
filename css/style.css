@@ -13,13 +13,18 @@
   width: 100%;
   margin: auto;
   padding: 18px 36px;
-  background: rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(6.8px);
-  backdrop-filter: blur(6.8px);
+  background: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(3.8px);
+  backdrop-filter: blur(3.8px);
 }
 
 .logo {
   text-decoration: none;
+}
+.logo img {
+  margin-left: 80px;
+  width: 90px;
+  height: auto;
 }
 .logo .logo-text {
   font-size: 28px;
@@ -126,7 +131,7 @@
 
 /* Todo: Fix the style for about us , remove manual images */
 
-.about-cards {
+.about-us-section {
   display: flex;
   gap: 40px;
   max-width: 1000px;
@@ -148,7 +153,7 @@
   aspect-ratio: 1 / 1;
 }
 
-.about-card h1 {
+.card h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 42px;
   font-weight: 700;
@@ -156,7 +161,7 @@
   color: #e00000;
 }
 
-.about-card p {
+.card p {
   font-size: 16px;
   line-height: 1.8;
   color: #333;

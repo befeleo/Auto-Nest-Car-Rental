@@ -285,20 +285,42 @@
 .tab-links {
   display: flex;
   list-style: none;
-  border: 1px solid grey;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .tab-link {
   flex: 1;
   text-align: center;
-  border-bottom: 1px solid red;
-  margin: 0 10px;
+  position: relative;
 }
 
 .tab-link a {
   display: block;
   padding: 15px 10px;
   text-decoration: none;
+  color: #6f6f6f;
+  font-weight: 500;
+  transition: color 0.2s linear;
+}
+
+.tab-link::after {
+  content: "";
+  width: 0;
+  background: #ed1c24;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: -1.5px;
+  transition: all 0.2s linear;
+}
+
+.tab-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.tab-link.active a {
+  color: #000;
 }
 
 .tab-content {
@@ -309,7 +331,7 @@
   display: none;
 }
 
-.tab-panel:first-child {
+.tab-panel.active {
   display: block;
 }
 

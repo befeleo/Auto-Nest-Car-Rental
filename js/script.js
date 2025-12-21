@@ -4,24 +4,23 @@ const tabLinks = document.querySelectorAll('.tab-link a');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
 toggleBtn.addEventListener('click', () => {
-    if (moreBrands.style.display === 'grid') {
-        moreBrands.style.display = 'none'
-    } else {
-        moreBrands.style.display = 'grid';
-    }
+    moreBrands.style.display = (moreBrands.style.display === 'grid') ? 'none' : 'grid';
 });
 
 tabLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-        tabLinks.forEach(tabLink => tabLink.classList.remove('active'));
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        tabLinks.forEach(tabLink => tabLink.parentElement.classList.remove('active'));
         tabPanels.forEach(panel => panel.style.display = 'none');
 
-        link.classList.add('active');;
+        link.parentElement.classList.add('active');
 
         const tabId = link.classList[0];
         const targetPanel = document.getElementById(tabId);
 
-        if (targetPanel)
+        if (targetPanel) {
             targetPanel.style.display = 'block';
+        }
     });
 });

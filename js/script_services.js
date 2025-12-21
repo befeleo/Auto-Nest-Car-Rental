@@ -58,7 +58,7 @@ function displayCars(list = cars) {
             <h3>${car.brand} ${car.name}</h3>
             <p><strong>$${car.price}</strong> / day</p>
             <p>${car.bodyType} • ${car.fuelType}</p>
-            <button onclick="showCarDetails(${car.id})">View Details</button>
+            <button onclick="showCarDetails(${car.id})" class="toggle-btn" >View Details</button>
         `;
         carListContainer.appendChild(carCard);
     });

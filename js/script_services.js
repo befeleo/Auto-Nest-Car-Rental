@@ -56,9 +56,9 @@ function displayCars(list = cars) {
         carCard.innerHTML = `
             <img src="${car.image}" alt="${car.brand} ${car.name}" onerror="this.src='images/placeholder.jpg'">
             <h3>${car.brand} ${car.name}</h3>
-            <p><strong>$${car.price}</strong> / day</p>
+            <p><strong>${car.price}</strong> birr / day</p>
             <p>${car.bodyType} • ${car.fuelType}</p>
-            <button onclick="showCarDetails(${car.id})">View Details</button>
+            <button onclick="showCarDetails(${car.id})" class="toggle-btn" >View Details</button>
         `;
         carListContainer.appendChild(carCard);
     });
@@ -137,3 +137,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // Make functions globally available
 window.showCarDetails = showCarDetails;
 window.closeDetails = closeDetails;
+
+

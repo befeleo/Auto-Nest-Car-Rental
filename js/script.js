@@ -1,10 +1,11 @@
-// --- 1. UI Logic (Tabs & Toggle) ---
 const toggleBtn = document.getElementById('toggleBtn');
 const moreBrands = document.getElementById('more-brands');
 const tabLinks = document.querySelectorAll('.tab-link a');
 const tabPanels = document.querySelectorAll('.tab-panel');
+const brandCard = document.querySelectorAll('.brand-card');
+const filterOptions = document.querySelectorAll('.filter-option');
 
-toggleBtn?.addEventListener('click', () => {
+toggleBtn.addEventListener('click', () => {
     moreBrands.style.display = (moreBrands.style.display === 'grid') ? 'none' : 'grid';
 });
 
@@ -26,8 +27,6 @@ const redirectToFilter = (value) => {
     window.location.href = `services.html?brand=${encodeURIComponent(value)}`;
 };
 
-const brandCard = document.querySelectorAll('.brand-card');
-
 brandCard.forEach(brand => {
     brand.addEventListener('click', () => {
         const brandName = brand.getAttribute('data-brand')
@@ -36,3 +35,10 @@ brandCard.forEach(brand => {
     });
 });
 
+filterOptions.forEach(filter => {
+    filter.addEventListener('click', () => {
+        const filterValue = filter.getAttribute('data-filter');
+
+        redirectToFilter(filterValue);
+    });
+});

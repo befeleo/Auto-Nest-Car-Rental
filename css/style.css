@@ -252,10 +252,8 @@
   height: 100px;
 }
 
-.more-brands {
+#more-brands {
   display: none;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
   margin-top: 20px;
 }
 .toggle-more {

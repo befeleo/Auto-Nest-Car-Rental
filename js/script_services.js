@@ -20,7 +20,7 @@ async function loadCars() {
         console.log('Attempting to load cars.json...');
 
         // Try different paths if needed
-        const response = await fetch('../data/cars.json');
+        const response = await fetch('./data/cars.json');
 
         if (!response.ok) {
             throw new Error(`Failed to load JSON: ${response.status} ${response.statusText}`);
@@ -29,13 +29,15 @@ async function loadCars() {
         cars = await response.json();
         console.log(`Successfully loaded ${cars.length} cars`, cars);
 
-        displayCars();
+        const urlParams = new URLSearchParams(window.location.search);
+        const carQuery = urlParams.get('car');
 
-        // Test if cars are loaded
-        if (cars.length > 0) {
-            console.log('First car:', cars[0]);
+        if (carQuery) {
+            console.log(`Filtering by brand from URL: ${carQuery}`);
+            const filteredCars = filterCars(carQuery);
+            displayCars(filteredCars);
+
         }
-
     } catch (error) {
         console.error('Error loading cars:', error);
         showError(`Failed to load cars: ${error.message}<br>Check browser console for details.`);
@@ -54,7 +56,7 @@ function displayCars(list = cars) {
         const carCard = document.createElement('div');
         carCard.className = 'car-card';
         carCard.innerHTML = `
-            <img src="${car.image}" alt="${car.brand} ${car.name}" onerror="this.src='images/placeholder.jpg'">
+            <img src="${car.image}" alt="${car.brand} ${car.name}" onerror="this.src='assets/images/placeholder.jpg'">
             <h3>${car.brand} ${car.name}</h3>
             <p><strong>$${car.price}</strong> / day</p>
             <p>${car.bodyType} • ${car.fuelType}</p>
@@ -75,6 +77,7 @@ function matchesCar(car, query) {
         car.fuelType.toLowerCase().includes(q) ||
         car.transmission.toLowerCase().includes(q) ||
         car.features.some(f => f.toLowerCase().includes(q))
+        // (car.features && car.features.some(f => f.toLowerCase().includes(q)))
     );
 }
 

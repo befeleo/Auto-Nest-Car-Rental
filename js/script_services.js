@@ -37,6 +37,8 @@ async function loadCars() {
             const filteredCars = filterCars(carQuery);
             displayCars(filteredCars);
 
+        } else {
+            displayCars(cars);
         }
     } catch (error) {
         console.error('Error loading cars:', error);
@@ -77,7 +79,6 @@ function matchesCar(car, query) {
         car.fuelType.toLowerCase().includes(q) ||
         car.transmission.toLowerCase().includes(q) ||
         car.features.some(f => f.toLowerCase().includes(q))
-        // (car.features && car.features.some(f => f.toLowerCase().includes(q)))
     );
 }
 

@@ -16,7 +16,7 @@ tabLinks.forEach((link) => {
         tabLinks.forEach(tabLink => tabLink.parentElement.classList.remove('active'));
         tabPanels.forEach(panel => panel.style.display = 'none');
         link.parentElement.classList.add('active');
-        const tabId = link.className; // Uses the class name as the ID
+        const tabId = link.className;
         const targetPanel = document.getElementById(tabId);
         if (targetPanel) targetPanel.style.display = 'block';
     });
@@ -24,7 +24,7 @@ tabLinks.forEach((link) => {
 
 const redirectToFilter = (value) => {
     if (!value) return;
-    window.location.href = `services.html?brand=${encodeURIComponent(value)}`;
+    window.location.href = `services.html?car=${encodeURIComponent(value)}`;
 };
 
 brandCard.forEach(brand => {
@@ -36,7 +36,8 @@ brandCard.forEach(brand => {
 });
 
 filterOptions.forEach(filter => {
-    filter.addEventListener('click', () => {
+    filter.addEventListener('click', (e) => {
+        e.preventDefault();
         const filterValue = filter.getAttribute('data-filter');
 
         redirectToFilter(filterValue);

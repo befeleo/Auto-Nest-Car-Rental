@@ -4,95 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body>
-    <header>
-      <h1>Car Inventory Management</h1>
-    </header>
-
-    <aside class="admin-sidebar">
-      <div class="logo">Auto Nest <span>Admin</span></div>
-      <nav id="admin-nav">
-        <a href="#" class="nav-link active" data-section="dashboard">
-          Dashboard
-        </a>
-        <a href="#" class="nav-link" data-section="reports"> Reports</a>
-        <a href="#" class="nav-link" data-section="inventory">
-          Manage Inventory
-        </a>
-        <a href="#" class="nav-link" data-section="bookings"> Bookings</a>
-        <a href="#" class="nav-link" data-section="customers"> Customers</a>
-        <a href=""> View Site</a>
-        <a href="#" class="nav-link" data-section="settings"> Settings</a>
-
-        <div class="sidebar-footer">
-          <a href="#" class="logout-link"> Logout</a>
-        </div>
-      </nav>
-    </aside>
-
-    <main>
-      <section class="admin-card">
-        <h3>Add New Car</h3>
-        <form id="add-car-form">
-          <input type="text" id="brand" placeholder="Brand" required />
-          <input type="text" id="name" placeholder="Model Name" required />
-          <input type="number" id="price" placeholder="Price" required />
-
-          <select id="fuelType">
-            <option value="Diesel">Diesel</option>
-            <option value="Petrol">Petrol</option>
-            <option value="Electric">Electric</option>
-            <option value="Hybrid">Hybrid</option>
-          </select>
-
-          <select id="bodyType">
-            <option value="Pickup">Pickup</option>
-            <option value="SUV">SUV</option>
-            <option value="Hatchback">Hatchback</option>
-            <option value="Sedan">Sedan</option>
-          </select>
-
-          <select id="transmission">
-            <option value="Automatic">Automatic</option>
-            <option value="Manual">Manual</option>
-          </select>
-
-          <div class="file-upload">
-            <label for="image-upload">Car Image:</label>
-            <input type="file" id="image-upload" />
+    <div class="admin-wrapper">
+      <aside class="admin-sidebar">
+        <div class="logo">Auto Nest <span>Admin</span></div>
+        <nav id="admin-nav">
+          <a href="#" class="nav-link active" data-section="dashboard"
+            >Dashboard</a
+          >
+          <a href="#" class="nav-link" data-section="reports">Reports</a>
+          <a href="#" class="nav-link" data-section="inventory"
+            >Manage Inventory</a
+          >
+          <a href="#" class="nav-link" data-section="bookings">Bookings</a>
+          <a href="#" class="nav-link" data-section="customers">Customers</a>
+          <a href="services.html">View Site</a>
+          <a href="#" class="nav-link" data-section="settings">Settings</a>
+          <div class="sidebar-footer">
+            <a href="#" class="logout-link">Logout</a>
           </div>
+        </nav>
+      </aside>
 
-          <div class="checkbox-group">
-            <label><input type="checkbox" id="isUsed" /> Used</label>
-            <label><input type="checkbox" id="isPopular" /> Popular</label>
-            <label><input type="checkbox" id="isLuxury" /> Luxury</label>
-          </div>
+      <div class="main-body-wrapper">
+        <header>
+          <h1>Car Inventory Management</h1>
+        </header>
 
-          <textarea id="features" placeholder="Features"></textarea>
+        <main>
+          <section class="admin-card">
+            <h3>Add New Car</h3>
+            <form id="add-car-form">
+              <div class="form-grid">
+                <input type="text" id="brand" placeholder="Brand" required />
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Model Name"
+                  required
+                />
+                <input type="number" id="price" placeholder="Price" required />
 
-          <div class="form-action">
-            <button type="submit" id="btn-add">Save Car</button>
-          </div>
-        </form>
-      </section>
+                <select id="fuelType">
+                  <option value="Diesel">Diesel</option>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Electric">Electric</option>
+                  <option value="Hybrid">Hybrid</option>
+                </select>
 
-      <section class="admin-table">
-        <h3>Current Inventory</h3>
-        <table id="car-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Vehicle</th>
-              <th>Price</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody id="admin-car-list"></tbody>
-        </table>
-      </section>
-    </main>
+                <select id="bodyType">
+                  <option value="Pickup">Pickup</option>
+                  <option value="SUV">SUV</option>
+                  <option value="Hatchback">Hatchback</option>
+                  <option value="Sedan">Sedan</option>
+                </select>
 
+                <select id="transmission">
+                  <option value="Automatic">Automatic</option>
+                  <option value="Manual">Manual</option>
+                </select>
+              </div>
+
+              <div class="file-upload">
+                <label for="image-upload">Car Image:</label>
+                <input type="file" id="image-upload" />
+              </div>
+
+              <div class="checkbox-group">
+                <label><input type="checkbox" id="isUsed" /> Used</label>
+                <label><input type="checkbox" id="isPopular" /> Popular</label>
+                <label><input type="checkbox" id="isLuxury" /> Luxury</label>
+              </div>
+
+              <textarea id="features" placeholder="Features"></textarea>
+
+              <div class="form-action">
+                <button type="submit" id="btn-add">Save Car</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="admin-table">
+            <h3>Current Inventory</h3>
+            <table id="car-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Vehicle</th>
+                  <th>Price</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody id="admin-car-list"></tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
     <script src="js/admin.js"></script>
   </body>
 </html>

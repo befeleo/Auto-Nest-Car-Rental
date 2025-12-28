@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="nav-bar">
-      <a href="#" class="logo">
+    <nav class="nav-bar-services">
+      <a href="index.html" class="logo">
         <img src="assets/images/logo.png" alt="logo" />
       </a>
       <div class="nav-bar-search">
@@ -19,7 +19,12 @@
           width="24"
           height="24"
         />
-        <input class="search" type="text" placeholder="Search" />
+        <input
+          id="search-input"
+          class="search"
+          type="text"
+          placeholder="Search"
+        />
       </div>
       <div class="nav-bar-links">
         <ul>
@@ -31,40 +36,122 @@
       </div>
     </nav>
 
-    <main>
-      <section class="car-section popular-cars-section">
-        <div id="car-list" class="car-grid"></div>
-      </section>
+    <main class="car-section">
+      <div id="car-list" class="car-grid"></div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>About Us</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Dignissimos sit minus reprehenderit pariatur voluptatibus deserunt
-            quos culpa vitae dolor esse saepe quisquam eaque, omnis tempore
-            exercitationem numquam accusantium, incidunt quasi!
+    <footer>
+      <div class="footer-container footer-top">
+        <div class="footer-info">
+          <div class="footer-logo-container">
+            <img src="assets/images/logo.png" alt="logo" />
+            <span class="logo-text">Auto Nest</span>
+          </div>
+          <p class="tagline">
+            Your trusted partner for car rentals in Ethiopia
           </p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Terms and Conditions</h3>
-        </div>
-
-        <div class="footer-section">
-          <h3>Contact Us</h3>
           <div class="social-links">
-            <a href="#">Phone</a>
-            <a href="#">Email</a>
-            <a href="#">Telegram</a>
+            <a
+              href="https://t.me/autonest"
+              class="social-link"
+              target="_blank"
+              rel="noopener"
+              ><img src="assets/icons/telegram-logo.svg" alt="Telegram" />
+            </a>
+            <a
+              href="https://facebook.com/autonest"
+              class="social-link"
+              target="_blank"
+              rel="noopener"
+              ><img src="assets/icons/facebook-logo.svg" alt="Facebook" />
+            </a>
+            <a
+              href="https://linkedin.com/company/autonest"
+              class="social-link"
+              target="_blank"
+              rel="noopener"
+              ><img src="assets/icons/linkedin-logo.svg" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://linkedin.com/company/autonest"
+              class="social-link"
+              target="_blank"
+              rel="noopener"
+              ><img src="assets/icons/x-logo.svg" alt="X (Twitter)" />
+            </a>
+            <a
+              href="https://instagram.com/autonest"
+              class="social-link"
+              target="_blank"
+              rel="noopener"
+              ><img src="assets/icons/instagram-logo.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://tiktok.com/@autonest"
+              class="social-link"
+              target="_blank"
+              rel="noopener"
+              ><img src="assets/icons/tiktok-logo.svg" alt="Tiktok" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-column">
+            <h4 class="column-title">PAGES</h4>
+            <ul class="link-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Car Service</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="link-column">
+            <h4 class="column-title">SUPPORT</h4>
+            <ul class="link-list">
+              <li><a href="#help">Help Center</a></li>
+              <li><a href="#terms">Terms of Service</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#cookies">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="link-column">
+            <h4 class="column-title">CONTACT US</h4>
+            <div class="contact-info">
+              <div class="contact-link">
+                <img src="assets/icons//phone.svg" alt="Phone" />
+                <a href="tel:+251912345678">+251 912 345 678 </a>
+                <p>|</p>
+                <a href="tel:+251912345678">+251 912 345 678</a>
+              </div>
+              <div class="contact-link">
+                <img src="assets/icons/envelope-simple.svg" alt="Email" />
+                <a href="autonestrental@gmail.com">
+                  support@autonestrental.com
+                </a>
+              </div>
+              <div class="contact-link">
+                <img src="assets/icons/map-pin.svg" alt="Telegram" />
+                <span>Haile Gebrselassie St. Addis Ababa, Ethiopia</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
+      <!-- Bottom Section -->
       <div class="footer-bottom">
-        <p>&copy; 2025 All rights reserved</p>
+        <div class="footer-info">
+          <p class="footer-description">
+            <span>AutoNest</span> Licensed car rental service provider operating
+            in Ethiopia.
+          </p>
+          <p class="footer-credit">Made with 🤍 in Ethiopia</p>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; 2025 AutoNest. All rights reserved.</p>
+        </div>
       </div>
     </footer>
 

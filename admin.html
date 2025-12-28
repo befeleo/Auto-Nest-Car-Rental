@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <h1>Car Inventory Management</h1>
+    </header>
+
+    <main>
+      <section class="admin-card">
+        <h3>Add New Car</h3>
+        <form id="add-car-form">
+          <input type="text" id="brand" placeholder="Brand" />
+          <input type="text" id="name" placeholder="Model Name" />
+          <input type="number" id="price" placeholder="Price" />
+
+          <select id="fuelType">
+            <option value="Diesel">Diesel</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+
+          <select id="bodyType">
+            <option value="Pickup">Pickup</option>
+            <option value="SUV">SUV</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Sedan">Sedan</option>
+          </select>
+
+          <select id="transmission">
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+          </select>
+
+          <label><input type="checkbox" id="isUsed" /> Used</label>
+          <label><input type="checkbox" id="isPopular" /> Popular</label>
+          <label><input type="checkbox" id="isLuxury" /> Luxury</label>
+
+          <textarea id="features" placeholder="Features"></textarea>
+
+          <button type="submit" class="btn-add">Add Car</button>
+        </form>
+      </section>
+
+      <section class="admin-table">
+        <h3>Current Inventory</h3>
+        <table id="car-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Vehicle</th>
+              <th>Price</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody id="admin-car-list"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

@@ -14,9 +14,9 @@
       <section class="admin-card">
         <h3>Add New Car</h3>
         <form id="add-car-form">
-          <input type="text" id="brand" placeholder="Brand" />
-          <input type="text" id="name" placeholder="Model Name" />
-          <input type="number" id="price" placeholder="Price" />
+          <input type="text" id="brand" placeholder="Brand" required />
+          <input type="text" id="name" placeholder="Model Name" required />
+          <input type="number" id="price" placeholder="Price" required />
 
           <select id="fuelType">
             <option value="Diesel">Diesel</option>
@@ -37,13 +37,22 @@
             <option value="Manual">Manual</option>
           </select>
 
-          <label><input type="checkbox" id="isUsed" /> Used</label>
-          <label><input type="checkbox" id="isPopular" /> Popular</label>
-          <label><input type="checkbox" id="isLuxury" /> Luxury</label>
+          <div class="file-upload">
+            <label for="image-upload">Car Image:</label>
+            <input type="file" id="image-upload" />
+          </div>
+
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="isUsed" /> Used</label>
+            <label><input type="checkbox" id="isPopular" /> Popular</label>
+            <label><input type="checkbox" id="isLuxury" /> Luxury</label>
+          </div>
 
           <textarea id="features" placeholder="Features"></textarea>
 
-          <button type="submit" class="btn-add">Add Car</button>
+          <div class="form-action">
+            <button type="submit" id="btn-add">Save Car</button>
+          </div>
         </form>
       </section>
 
@@ -62,6 +71,7 @@
         </table>
       </section>
     </main>
+
     <script src="js/admin.js"></script>
   </body>
 </html>

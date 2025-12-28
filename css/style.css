@@ -4,9 +4,17 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   background-color: #f4f7fe;
   color: #333;
+  overflow: auto;
+  height: 100%;
+  overscroll-behavior: none;
 }
 
 nav {
@@ -40,10 +48,12 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 8px 16px;
   background: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 50px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .search {
@@ -399,19 +409,19 @@ footer {
   margin-bottom: 40px;
 }
 
-.footer-logo {
+.footer-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.logo-container {
+.footer-logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.footer-logo .logo-container img {
+.footer-info .footer-logo-container img {
   width: 90px;
 }
 
@@ -556,7 +566,7 @@ footer {
   text-align: center;
 }
 .nav-bar-services {
-  position: sticky; 
+  position: sticky;
   z-index: 1000;
   padding: 18px 5%;
   background-color: #191b31;

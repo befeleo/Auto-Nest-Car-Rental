@@ -1,0 +1,59 @@
+/* Services Navigation */
+.nav-bar-services {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 18px 5%;
+  background-color: var(--color-secondary);
+}
+
+/* Services Car Grid */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  column-gap: 30px;
+  row-gap: 35px;
+  padding: var(--spacing-xl);
+}
+
+.car-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.car-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.car-card img {
+  width: 100%;
+  object-fit: cover;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.car-card button {
+  width: 100%;
+  padding: 14px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color var(--transition-normal);
+}
+
+.car-card button:hover {
+  background: var(--color-primary-dark);
+}

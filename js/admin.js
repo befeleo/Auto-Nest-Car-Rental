@@ -66,8 +66,12 @@ const renderTable = () => {
             <td class="price-cell">${car.price.toLocaleString()} Birr</td>
             <td>
                 <div class="action-buttons">
-                    <button class="btn-edit" onclick="editCar(${car.id})">Edit</button>
-                    <button class="btn-delete" onclick="deleteCar(${car.id})">Delete</button>
+                    <button class="btn-edit" onclick="editCar(${car.id})">
+                        <img src="assets/icons/pen.svg" alt="edit"  class="action-img" />
+                    </button>
+                    <button class="btn-delete" onclick="deleteCar(${car.id})"> 
+                        <img src="assets/icons/trash-can.svg" alt="delete" class="action-img" />
+                    </button>
                 </div>
             </td>
         </tr>`).join('');

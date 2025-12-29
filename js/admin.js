@@ -9,53 +9,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const form = document.getElementById('add-car-form');
-    form.addEventListener('submit', () => {
+    const modal = document.getElementById('formModal');
 
-        const brand = document.getElementById('brand').value;
-        const name = document.getElementById('name').value;
-        const price = document.getElementById('price').value;
-        const fuelType = document.getElementById('fuelType').value;
-        const bodyType = document.getElementById('bodyType').value;
-        const transmission = document.getElementById('transmission').value;
-        const isUsed = document.getElementById('isUsed').checked;
-        const isPopular = document.getElementById('isPopular').checked;
-        const isLuxury = document.getElementById('isLuxury').checked;
-        const featuresInput = document.getElementById('features').value;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
         const newCar = {
-            brand: brand,
-            name: name,
-            price: price,
-            fuelType: fuelType,
-            bodyType: bodyType,
-            transmission: transmission,
-            isUsed: isUsed,
-            isPopular: isPopular,
-            isLuxury: isLuxury,
+            id: Date.now(),
+            brand: document.getElementById('brand').value,
+            name: document.getElementById('name').value,
+            price: parseInt(document.getElementById('price').value),
+            fuelType: document.getElementById('fuelType').value,
+            bodyType: document.getElementById('bodyType').value,
+            transmission: document.getElementById('transmission').value,
+            isUsed: document.getElementById('isUsed').checked,
+            isPopular: document.getElementById('isPopular').checked,
+            isLuxury: document.getElementById('isLuxury').checked,
+            image: "assets/images/car_images/placeholder.png",
+            features: document.getElementById('features').value
+                ? document.getElementById('features').value.split(',').map(f => f.trim()) : []
         };
 
         inventory.push(newCar);
         save();
     });
+
+    document.getElementById('openModalBtn').onclick = () => {
+        form.reset();
+        document.getElementById('edit-id').value = '';
+        document.getElementById('modalTitle').innerText = "Add New Vehicle";
+        modal.style.display = 'flex';
+    };
+
+    document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
 });
 
-function renderTable() {
+const renderTable = () => {
     const tbody = document.getElementById('admin-car-list');
-    if (!tbody) return;
-
     tbody.innerHTML = inventory.map(car => `
-        <tr>
-            <td><strong>${car.brand}</strong> ${car.name}</td>
-            <td>${car.price.toLocaleString()} Birr</td>
+        <tr class="inventory-row">
+            <td>#${car.id.toString().slice(-4)}</td>
+            <td>${car.brand}</td>
+            <td>${car.name}</td>
             <td>${car.bodyType}</td>
+            <td class="price-cell">${car.price.toLocaleString()} Birr</td>
             <td>
-                <button>Delete</button>
+                <div class="action-buttons">
+                    <button class="btn-edit" onclick="editCar(${car.id})">Edit</button>
+                    <button class="btn-delete" onclick="deleteCar(${car.id})">Delete</button>
+                </div>
             </td>
-        </tr>
-    `).join('');
+        </tr>`).join('');
 }
 
-function save() {
+const save = () => {
     localStorage.setItem('autoNestCars', JSON.stringify(inventory));
     renderTable();
 }
+
+const deleteCar = (id) => {
+    inventory = inventory.filter(car => car.id !== id);
+    save();
+}
+
+window.deleteCar = deleteCar;

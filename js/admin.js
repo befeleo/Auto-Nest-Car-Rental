@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const editId = document.getElementById('edit-id').value;
 
         const newCar = {
-            id: Date.now(),
+            id: editId ? parseInt(editId) : Date.now(),
             brand: document.getElementById('brand').value,
             name: document.getElementById('name').value,
             price: parseInt(document.getElementById('price').value),
@@ -102,7 +102,7 @@ const editCar = (id) => {
     document.getElementById('isPopular').checked = car.isPopular;
     document.getElementById('isLuxury').checked = car.isLuxury;
     document.getElementById('features').value = car.features ? car.features.join(', ') : '';
-
+    
     document.getElementById('formModal').style.display = 'flex';
 };
 

@@ -79,72 +79,133 @@
         </header>
 
         <main>
-          <section class="admin-card">
-            <h3>Add New Car</h3>
-            <form id="add-car-form">
-              <div class="form-grid">
-                <input type="text" id="brand" placeholder="Brand" required />
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Model Name"
-                  required
-                />
-                <input type="number" id="price" placeholder="Price" required />
+          <div id="inventory-section">
+            <header class="inventory-header">
+              <h1>Manage Inventory</h1>
+              <button id="openModalBtn" type="button">+ Add New Car</button>
+            </header>
 
-                <select id="fuelType">
-                  <option value="Diesel">Diesel</option>
-                  <option value="Petrol">Petrol</option>
-                  <option value="Electric">Electric</option>
-                  <option value="Hybrid">Hybrid</option>
-                </select>
+            <section class="admin-table">
+              <h3>Current Inventory</h3>
+              <div class="table-scroll">
+                <table id="car-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>BRAND</th>
+                      <th>MODEL</th>
+                      <th>TYPE</th>
+                      <th>PRICE (Day)</th>
+                      <th>ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-car-list"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
 
-                <select id="bodyType">
-                  <option value="Pickup">Pickup</option>
-                  <option value="SUV">SUV</option>
-                  <option value="Hatchback">Hatchback</option>
-                  <option value="Sedan">Sedan</option>
-                </select>
-
-                <select id="transmission">
-                  <option value="Automatic">Automatic</option>
-                  <option value="Manual">Manual</option>
-                </select>
+          <div id="formModal" class="modal-overlay">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 id="modalTitle">Add New Vehicle</h3>
+                <span id="closeModalBtn">&times;</span>
               </div>
 
-              <div class="file-upload">
-                <label for="image-upload">Car Image:</label>
-                <input type="file" id="image-upload" />
-              </div>
+              <form id="add-car-form">
+                <input type="hidden" id="edit-id" />
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label>Brand <span class="required">*</span></label>
+                    <input
+                      type="text"
+                      id="brand"
+                      placeholder="Brand (e.g. Toyota)"
+                      required
+                    />
+                  </div>
 
-              <div class="checkbox-group">
-                <label><input type="checkbox" id="isUsed" /> Used</label>
-                <label><input type="checkbox" id="isPopular" /> Popular</label>
-                <label><input type="checkbox" id="isLuxury" /> Luxury</label>
-              </div>
+                  <div class="form-group">
+                    <label>Model Name <span class="required">*</span></label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Model (e.g. Corolla)"
+                      required
+                    />
+                  </div>
 
-              <textarea id="features" placeholder="Features"></textarea>
+                  <div class="form-group">
+                    <label>
+                      Price per Day (Birr)<span class="required">*</span>
+                    </label>
+                    <input
+                      type="number"
+                      id="price"
+                      placeholder="Price per Day (Birr)"
+                      required
+                    />
+                  </div>
 
-              <div class="form-action">
-                <button type="submit" id="btn-add">Save Car</button>
-              </div>
-            </form>
-          </section>
+                  <div class="form-group">
+                    <label>Fuel Type <span class="required">*</span></label>
+                    <select id="fuelType" title="fuelType">
+                      <option value="Petrol">Petrol</option>
+                      <option value="Diesel">Diesel</option>
+                      <option value="Electric">Electric</option>
+                    </select>
+                  </div>
 
-          <section class="admin-table">
-            <h3>Current Inventory</h3>
-            <table id="car-table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Vehicle</th>
-                  <th>Price</th>
-                  <th>Type</th>
-                </tr>
-              </thead>
-              <tbody id="admin-car-list"></tbody>
-            </table>
-          </section>
+                  <div class="form-group">
+                    <label>Body Type <span class="required">*</span></label>
+                    <select id="bodyType" title="bodyType">
+                      <option value="SUV">SUV</option>
+                      <option value="Sedan">Sedan</option>
+                      <option value="Pickup">Pickup</option>
+                      <option value="Hatchback">Hatchback</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Transmission <span class="required">*</span></label>
+                    <select id="transmission" title="transmission">
+                      <option value="Automatic">Automatic</option>
+                      <option value="Manual">Manual</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="file-upload-group">
+                  <label for="image-upload">Car Image:</label>
+                  <input type="file" id="image-upload" />
+                </div>
+
+                <div class="checkbox-group">
+                  <label><input type="checkbox" id="isUsed" /> Used</label>
+                  <label
+                    ><input type="checkbox" id="isPopular" /> Popular</label
+                  >
+                  <label
+                    ><input type="checkbox" id="isLuxury" /> Luxury Fleet</label
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label>Key Features</label>
+                  <textarea
+                    id="features"
+                    placeholder="Key Features (e.g. AC, Bluetooth, GPS)"
+                  ></textarea>
+                </div>
+
+                <div class="form-action">
+                  <button type="submit" class="btn-save" id="saveBtn">
+                    Save Vehicle
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </main>
       </div>
     </div>

@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        const editId = document.getElementById('edit-id').value;
+
         const newCar = {
             id: Date.now(),
             brand: document.getElementById('brand').value,
@@ -29,19 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
             features: document.getElementById('features').value
                 ? document.getElementById('features').value.split(',').map(f => f.trim()) : []
         };
+        if (editId) {
+            const index = inventory.findIndex(c => c.id === newCar.id);
+            if (index !== -1) inventory[index] = newCar;
+        } else {
+            inventory.push(newCar);
+        }
 
-        inventory.push(newCar);
         save();
+        modal.style.display = 'none';
+        form.reset();
     });
 
-    document.getElementById('openModalBtn').onclick = () => {
+    document.getElementById('openModalBtn').addEventListener('click', () => {
         form.reset();
         document.getElementById('edit-id').value = '';
         document.getElementById('modalTitle').innerText = "Add New Vehicle";
         modal.style.display = 'flex';
-    };
+    });
 
-    document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 });
 
 const renderTable = () => {
@@ -73,3 +84,26 @@ const deleteCar = (id) => {
 }
 
 window.deleteCar = deleteCar;
+
+const editCar = (id) => {
+    const car = inventory.find(c => c.id === id);
+    if (!car) return;
+
+    document.getElementById('modalTitle').innerText = "Edit Vehicle";
+
+    document.getElementById('edit-id').value = car.id;
+    document.getElementById('brand').value = car.brand;
+    document.getElementById('name').value = car.name;
+    document.getElementById('price').value = car.price;
+    document.getElementById('fuelType').value = car.fuelType;
+    document.getElementById('bodyType').value = car.bodyType;
+    document.getElementById('transmission').value = car.transmission;
+    document.getElementById('isUsed').checked = car.isUsed;
+    document.getElementById('isPopular').checked = car.isPopular;
+    document.getElementById('isLuxury').checked = car.isLuxury;
+    document.getElementById('features').value = car.features ? car.features.join(', ') : '';
+
+    document.getElementById('formModal').style.display = 'flex';
+};
+
+window.editCar = editCar;

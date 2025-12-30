@@ -79,7 +79,7 @@
         </header>
 
         <main>
-          <div id="inventory-section">
+          <div id="inventory-section" class="content-section">
             <header class="inventory-header">
               <h1>Manage Inventory</h1>
               <button id="openModalBtn" type="button">+ Add New Car</button>
@@ -100,6 +100,31 @@
                     </tr>
                   </thead>
                   <tbody id="admin-car-list"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <div id="booking-section" class="content-section">
+            <header class="inventory-header">
+              <h1>Manage Bookings</h1>
+            </header>
+
+            <section class="admin-table">
+              <h3>Customer Requests</h3>
+              <div class="table-scroll">
+                <table id="booking-table">
+                  <thead>
+                    <tr>
+                      <th>CUSTOMER</th>
+                      <th>VEHICLE</th>
+                      <th>PHONE</th>
+                      <th>DATE</th>
+                      <th>STATUS</th>
+                      <th>ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-booking-list"></tbody>
                 </table>
               </div>
             </section>

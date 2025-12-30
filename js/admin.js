@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const allSections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const sectionName = link.getAttribute('data-section');
+            const targetSection = document.getElementById(`${sectionName}-section`);
+
+            if (targetSection) {
+                e.preventDefault();
+
+                allSections.forEach(section => section.classList.remove('active-section'));
+                targetSection.classList.add('active-section');
+            }
+        });
+    });
+});
+
 let inventory = [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -106,7 +125,7 @@ const editCar = (id) => {
     document.getElementById('isPopular').checked = car.isPopular;
     document.getElementById('isLuxury').checked = car.isLuxury;
     document.getElementById('features').value = car.features ? car.features.join(', ') : '';
-    
+
     document.getElementById('formModal').style.display = 'flex';
 };
 

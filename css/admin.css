@@ -73,6 +73,13 @@ main {
   height: 30px;
 }
 
+.content-section {
+  display: none;
+}
+.active-section {
+  display: block !important;
+}
+
 #formModal {
   position: fixed;
   top: 0;
@@ -90,7 +97,7 @@ main {
   padding: 30px;
   border-radius: 15px;
   width: 90%;
-  width: 600px;
+  max-width: 600px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
 }
@@ -155,17 +162,17 @@ th {
 .action-buttons {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
-.btn-edit,
-.btn-delete {
-  background: none;
+.action-buttons button {
+  background: transparent;
   border: none;
   padding: 5px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .action-img {
@@ -275,4 +282,38 @@ th {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.btn-confirm .action-img {
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
+    brightness(118%) contrast(119%);
+}
+
+.btn-cancel-status .action-img {
+  filter: invert(27%) sepia(91%) saturate(6452%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status.pending {
+  background-color: #fff4e5;
+  color: #b76e00;
+}
+
+.status.confirmed {
+  background-color: #e6fcf5;
+  color: #087f5b;
+}
+
+.status.cancelled {
+  background-color: #fee2e2;
+  color: #b91c1c;
 }

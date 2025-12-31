@@ -47,144 +47,78 @@
     <!-- side bar -->
 
     <!-- main wrapper -->
-    <div class="main-body-wrapper">
-      <header>
-        <h1>Car Inventory Management</h1>
-      </header>
-      <!-- main -->
-      <main>
-        <!-- inventory section -->
-        <section class="admin-card">
-          <h3>Add New Car</h3>
-          <form id="add-car-form">
+
+    <main>
+
+
+      <!-- admin table section -->
+
+      <!-- Admin settings -->
+      <div class="content-section" id="settings-section">
+        <header class="inventory-header">
+          <h1>Admin Settings</h1>
+        </header>
+
+
+        <div class="settings-grid">
+          <div class="settings-sub-card">
+            <h4>Admin Profile</h4>
+            <div class="profile-upload-container">
+              <div class="profile-preview">
+                <img src="assets/icons/users-solid.svg" alt="Profile" id="profile-img-preview">
+              </div>
+              <input type="file" id="admin-photo-upload" accept="image/*">
+            </div>
             <div class="form-grid">
-              <input type="text" id="brand" placeholder="Brand" required />
-              <input type="text" id="name" placeholder="Model Name" required />
-              <input type="number" id="price" placeholder="Price" required />
+              <input type="text" id="admin-name" placeholder="Full Name">
+              <input type="email" id="admin-email" placeholder="Email Address">
 
-              <select id="fuelType">
-                <option value="Diesel">Diesel</option>
-                <option value="Petrol">Petrol</option>
-                <option value="Electric">Electric</option>
-                <option value="Hybrid">Hybrid</option>
-              </select>
-
-              <select id="bodyType">
-                <option value="Pickup">Pickup</option>
-                <option value="SUV">SUV</option>
-                <option value="Hatchback">Hatchback</option>
-                <option value="Sedan">Sedan</option>
-              </select>
-
-              <select id="transmission">
-                <option value="Automatic">Automatic</option>
-                <option value="Manual">Manual</option>
-              </select>
-            </div>
-
-            <div class="file-upload">
-              <label for="image-upload">Car Image:</label>
-              <input type="file" id="image-upload" />
-            </div>
-
-            <div class="checkbox-group">
-              <label><input type="checkbox" id="isUsed" /> Used</label>
-              <label><input type="checkbox" id="isPopular" /> Popular</label>
-              <label><input type="checkbox" id="isLuxury" /> Luxury</label>
-            </div>
-
-            <textarea id="features" placeholder="Features"></textarea>
-
-            <div class="form-action">
-              <button type="submit" id="btn-add">Save Car</button>
-            </div>
-          </form>
-        </section>
-        <!-- inventory section -->
-
-        <!-- admin table section  -->
-        <section class="admin-table">
-          <h3>Current Inventory</h3>
-          <table id="car-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Vehicle</th>
-                <th>Price</th>
-                <th>Type</th>
-              </tr>
-            </thead>
-            <tbody id="admin-car-list"></tbody>
-          </table>
-        </section>
-        <!-- admin table section -->
-
-        <!-- Admin settings -->
-        <section class="content-section" id="settings-section" style="display: none;">
-          <div class="settings-header">
-            <h3>Admin Settings</h3>
-            <p>Manage your profile and application preferences.</p>
-          </div>
-
-          <div class="settings-grid">
-            <div class="settings-sub-card">
-              <h4>Admin Profile</h4>
-              <div class="profile-upload-container">
-                <div class="profile-preview">
-                  <img src="assets/icons/users-solid.svg" alt="Profile" id="profile-img-preview">
+              <div class="password-display-group" style="margin-top: 10px;">
+                <div class="input-wrapper"
+                  style="display: flex; gap: 5px; background: #eee; padding: 5px; border-radius: 4px;">
+                  <input type="password" id="admin-pass-display" value="********" readonly
+                    style="border:none; background:transparent; width:100%">
+                  <button type="button" id="btn-change-pass" class="btn-text"
+                    style="border:none; color:#e94560; cursor:pointer; background:none; white-space:nowrap; font-weight:bold;">Change</button>
                 </div>
-                <input type="file" id="admin-photo-upload" accept="image/*">
-              </div>
-              <div class="form-grid">
-                <input type="text" id="admin-name" placeholder="Full Name">
-                <input type="email" id="admin-email" placeholder="Email Address">
-
-                <div class="password-display-group" style="margin-top: 10px;">
-                  <div class="input-wrapper"
-                    style="display: flex; gap: 5px; background: #eee; padding: 5px; border-radius: 4px;">
-                    <input type="password" id="admin-pass-display" value="********" readonly
-                      style="border:none; background:transparent; width:100%">
-                    <button type="button" id="btn-change-pass" class="btn-text"
-                      style="border:none; color:#e94560; cursor:pointer; background:none; white-space:nowrap; font-weight:bold;">Change</button>
-                  </div>
-                  <div id="new-password-fields" style="display: none; margin-top: 10px;">
-                    <input type="password" id="new-pass" placeholder="New Password" style="width: 100%;">
-                  </div>
+                <div id="new-password-fields" style="display: none; margin-top: 10px;">
+                  <input type="password" id="new-pass" placeholder="New Password" style="width: 100%;">
                 </div>
               </div>
             </div>
-
-            <div class="settings-sub-card">
-              <h4>System Preferences</h4>
-              <div class="checkbox-group vertical">
-                <label><input type="checkbox" id="pref-notifications"> Receive Booking Notifications</label>
-                <label><input type="checkbox" id="pref-maintenance"> Enable Maintenance Mode</label>
-                <label><input type="checkbox" id="pref-alerts"> Show Inventory Alerts</label>
-              </div>
-              <h4 style="margin-top: 20px;">Currency Format</h4>
-              <select id="currency-select">
-                <option value="ETB">Ethiopian Birr (Br)</option>
-                <option value="USD">USD ($)</option>
-              </select>
-            </div>
-
-            <div class="settings-sub-card">
-              <h4>Account Actions</h4>
-              <div class="account-buttons">
-                <button type="button" class="btn-secondary" id="btn-login-switch">Switch Account</button>
-                <button type="button" class="btn-danger" id="btn-settings-logout">Log Out</button>
-              </div>
-            </div>
           </div>
 
-          <div class="form-action" style="margin-top: 20px;">
-            <button type="button" id="btn-save-settings" class="btn-save">Update Settings</button>
+          <div class="settings-sub-card">
+            <h4>System Preferences</h4>
+            <div class="checkbox-group vertical">
+              <label><input type="checkbox" id="pref-notifications"> Receive Booking Notifications</label>
+              <label><input type="checkbox" id="pref-maintenance"> Enable Maintenance Mode</label>
+              <label><input type="checkbox" id="pref-alerts"> Show Inventory Alerts</label>
+            </div>
+            <h4 style="margin-top: 20px;">Currency Format</h4>
+            <select id="currency-select">
+              <option value="ETB">Ethiopian Birr (Br)</option>
+              <option value="USD">USD ($)</option>
+            </select>
           </div>
-        </section>
-      </main>
-      <!-- main -->
-    </div>
-    <!-- main wrapper -->
+
+          <div class="settings-sub-card">
+            <h4>Account Actions</h4>
+            <div class="account-buttons">
+              <button type="button" class="btn-secondary" id="btn-login-switch">Switch Account</button>
+              <button type="button" class="btn-danger" id="btn-settings-logout">Log Out</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-action" style="margin-top: 20px;">
+          <button type="button" id="btn-save-settings" class="btn-save">Update Settings</button>
+        </div>
+      </div>
+    </main>
+    <!-- main -->
+  </div>
+  <!-- main wrapper -->
   </div>
   <!-- admin wrapper -->
 

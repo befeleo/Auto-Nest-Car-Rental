@@ -6,7 +6,8 @@
 
 html {
   scroll-behavior: smooth;
-  overscroll-behavior: none;
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: none;
 }
 
 body {

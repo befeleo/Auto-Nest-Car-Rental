@@ -369,15 +369,17 @@ nav {
 }
 
 .filter-option {
-  padding: 8px 20px;
+  padding: 8px 18px;
   font-size: 14px;
   text-align: center;
-  border: 1px solid #56586a;
+  border: 2px solid #56586a;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .filter-option a {
   text-decoration: none;
+  color: #111;
 }
 
 .price-option,
@@ -385,6 +387,23 @@ nav {
 .body-option,
 .more-option {
   margin-bottom: 5px;
+}
+
+.price-option a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.price-range {
+  display: inline-block;
+  text-align: center;
 }
 
 #back-to-top {
@@ -562,7 +581,6 @@ footer {
 
 .footer-description {
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .footer-description span {

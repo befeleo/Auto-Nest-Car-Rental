@@ -139,6 +139,78 @@
             <header class="inventory-header">
               <h1>Setting</h1>
             </header>
+            <div class="settings-grid">
+              <div class="settings-sub-card">
+                <h4>Admin Profile</h4>
+                <div class="profile-upload-container">
+                  <div class="profile-preview">
+                    <img
+                      src="assets/icons/user-solid.svg"
+                      alt="Profile"
+                      id="profile-img-preview"
+                    />
+                  </div>
+                  <label for="admin-photo-upload" id="change-admin-photo">
+                    Change Photo
+                  </label>
+                  <input type="file" id="admin-photo-upload" accept="image/*" />
+                </div>
+                <form class="setting-form-grid">
+                  <input type="text" id="admin-name" placeholder="Full Name" />
+                  <input type="email" id="admin-email" placeholder="Email" />
+
+                  <div class="password-display-group">
+                    <div class="input-wrapper">
+                      <input
+                        type="password"
+                        id="admin-pass-display"
+                        value="********"
+                        readonly
+                      />
+                      <button type="button" class="btn-text">Change</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="settings-sub-card">
+                <h4>System Preferences</h4>
+                <div class="checkbox-group vertical">
+                  <label>
+                    <input type="checkbox" />
+                    Receive Booking Notifications
+                  </label>
+                  <label>
+                    <input type="checkbox" />
+                    Enable Maintenance Mode
+                  </label>
+                  <label>
+                    <input type="checkbox" />
+                    Show Inventory Alerts
+                  </label>
+                </div>
+                <h4 class="currency-format-heading">Currency Format</h4>
+                <select id="currency-select">
+                  <option value="ETB">Ethiopian Birr (Br)</option>
+                  <option value="USD">USD ($)</option>
+                </select>
+              </div>
+
+              <div class="settings-sub-card">
+                <h4>Account Actions</h4>
+                <div class="account-buttons">
+                  <button type="button" class="btn-switch-account">
+                    Switch Account
+                  </button>
+                  <button type="button" class="btn-logout-account">
+                    Log Out
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="update-setting">
+                Update Setting
+              </button>
+            </div>
           </div>
 
           <div id="formModal" class="modal-overlay">
@@ -217,13 +289,13 @@
                 </div>
 
                 <div class="checkbox-group">
-                  <label><input type="checkbox" id="isUsed" /> Used</label>
-                  <label
-                    ><input type="checkbox" id="isPopular" /> Popular</label
-                  >
-                  <label
-                    ><input type="checkbox" id="isLuxury" /> Luxury Fleet</label
-                  >
+                  <label><input type="checkbox" id="isUsed" /> Used </label>
+                  <label>
+                    <input type="checkbox" id="isPopular" />Popular
+                  </label>
+                  <label>
+                    <input type="checkbox" id="isLuxury" /> Luxury Fleet
+                  </label>
                 </div>
 
                 <div class="form-group">

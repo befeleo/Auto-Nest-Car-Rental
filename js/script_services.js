@@ -20,7 +20,7 @@ async function loadCars() {
         console.log('Attempting to load cars.json...');
 
         // Try different paths if needed
-        const response = await fetch('../data/cars.json');
+        const response = await fetch('./data/cars.json');
 
         if (!response.ok) {
             throw new Error(`Failed to load JSON: ${response.status} ${response.statusText}`);
@@ -29,13 +29,17 @@ async function loadCars() {
         cars = await response.json();
         console.log(`Successfully loaded ${cars.length} cars`, cars);
 
-        displayCars();
+        const urlParams = new URLSearchParams(window.location.search);
+        const carQuery = urlParams.get('car');
 
-        // Test if cars are loaded
-        if (cars.length > 0) {
-            console.log('First car:', cars[0]);
+        if (carQuery) {
+            console.log(`Filtering by brand from URL: ${carQuery}`);
+            const filteredCars = filterCars(carQuery);
+            displayCars(filteredCars);
+
+        } else {
+            displayCars(cars);
         }
-
     } catch (error) {
         console.error('Error loading cars:', error);
         showError(`Failed to load cars: ${error.message}<br>Check browser console for details.`);
@@ -54,11 +58,11 @@ function displayCars(list = cars) {
         const carCard = document.createElement('div');
         carCard.className = 'car-card';
         carCard.innerHTML = `
-            <img src="${car.image}" alt="${car.brand} ${car.name}" onerror="this.src='images/placeholder.jpg'">
+            <img src="${car.image}" alt="${car.brand} ${car.name}" onerror="this.src='assets/images/placeholder.jpg'">
             <h3>${car.brand} ${car.name}</h3>
-            <p><strong>$${car.price}</strong> / day</p>
+            <p><strong>${car.price}</strong> birr / day</p>
             <p>${car.bodyType} • ${car.fuelType}</p>
-            <button onclick="showCarDetails(${car.id})">View Details</button>
+            <button onclick="window.location.href='car-details.html?id=${car.id}'" class="toggle-btn" >View Details</button>
         `;
         carListContainer.appendChild(carCard);
     });
@@ -67,6 +71,26 @@ function displayCars(list = cars) {
 function matchesCar(car, query) {
     if (!query) return true;
     const q = query.toLowerCase();
+
+    if (q.startsWith('range-')) {
+        const price = Number(car.price);
+        switch (q) {
+            case 'range-1': return price < 2000;
+            case 'range-2': return price >= 2000 && price < 3000;
+            case 'range-3': return price >= 3000 && price < 4000;
+            case 'range-4': return price >= 4000 && price < 5000;
+            case 'range-5': return price >= 5000 && price < 6000;
+            case 'range-6': return price >= 6000;
+        }
+    }
+    if (q === 'popular') return car.isPopular === true;
+    if (q === 'used') return car.isUsed === true;
+    if (q === 'new') return car.isUsed === false;
+    if (q === 'luxury') return car.isLuxury === true;
+    if (q === 'automatic') return car.transmission.toLowerCase() === 'automatic';
+    if (q === 'manual') return car.transmission.toLowerCase() === 'manual';
+    if (q === 'seats-5') return Number(car.seats) === 5;
+    if (q === 'seats-7') return Number(car.seats) === 7;
 
     return (
         car.name.toLowerCase().includes(q) ||
@@ -137,3 +161,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // Make functions globally available
 window.showCarDetails = showCarDetails;
 window.closeDetails = closeDetails;
+
+

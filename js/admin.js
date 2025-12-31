@@ -1,3 +1,24 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const allSections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const sectionName = link.getAttribute('data-section');
+            const targetSection = document.getElementById(`${sectionName}-section`);
+
+            if (targetSection) {
+                e.preventDefault();
+
+
+                allSections.forEach(section => section.classList.remove('active-section'));
+                targetSection.classList.add('active-section');
+            }
+        });
+    });
+});
+
+// Inventory
 let inventory = [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -5,154 +26,184 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedData = localStorage.getItem('autoNestCars');
     if (savedData) {
         inventory = JSON.parse(savedData);
-        renderTable();
+        renderInventory();
     }
 
     const form = document.getElementById('add-car-form');
-    form.addEventListener('submit', () => {
+    const modal = document.getElementById('formModal');
 
-        const brand = document.getElementById('brand').value;
-        const name = document.getElementById('name').value;
-        const price = document.getElementById('price').value;
-        const fuelType = document.getElementById('fuelType').value;
-        const bodyType = document.getElementById('bodyType').value;
-        const transmission = document.getElementById('transmission').value;
-        const isUsed = document.getElementById('isUsed').checked;
-        const isPopular = document.getElementById('isPopular').checked;
-        const isLuxury = document.getElementById('isLuxury').checked;
-        const featuresInput = document.getElementById('features').value;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const editId = document.getElementById('edit-id').value;
 
         const newCar = {
-            brand: brand,
-            name: name,
-            price: price,
-            fuelType: fuelType,
-            bodyType: bodyType,
-            transmission: transmission,
-            isUsed: isUsed,
-            isPopular: isPopular,
-            isLuxury: isLuxury,
+            id: editId ? parseInt(editId) : Date.now(),
+            brand: document.getElementById('brand').value,
+            name: document.getElementById('name').value,
+            price: parseInt(document.getElementById('price').value),
+            fuelType: document.getElementById('fuelType').value,
+            bodyType: document.getElementById('bodyType').value,
+            transmission: document.getElementById('transmission').value,
+            isUsed: document.getElementById('isUsed').checked,
+            isPopular: document.getElementById('isPopular').checked,
+            isLuxury: document.getElementById('isLuxury').checked,
+            image: "assets/images/car_images/placeholder.png",
+            features: document.getElementById('features').value
+                ? document.getElementById('features').value.split(',').map(f => f.trim()) : []
         };
+        if (editId) {
+            const index = inventory.findIndex(c => c.id === newCar.id);
+            if (index !== -1) inventory[index] = newCar;
+        } else {
+            inventory.push(newCar);
+        }
 
-        inventory.push(newCar);
-        save();
+        saveInventory();
+        modal.style.display = 'none';
+        form.reset();
+    });
+
+    document.getElementById('openModalBtn').addEventListener('click', () => {
+        form.reset();
+        document.getElementById('edit-id').value = '';
+        document.getElementById('modalTitle').innerText = "Add New Vehicle";
+        modal.style.display = 'flex';
+    });
+
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+        modal.style.display = 'none';
     });
 });
 
-function renderTable() {
+const renderInventory = () => {
     const tbody = document.getElementById('admin-car-list');
-    if (!tbody) return;
-
     tbody.innerHTML = inventory.map(car => `
-        <tr>
-            <td><strong>${car.brand}</strong> ${car.name}</td>
-            <td>${car.price.toLocaleString()} Birr</td>
+        <tr class="inventory-row">
+            <td>#${car.id.toString().slice(-4)}</td>
+            <td>${car.brand}</td>
+            <td>${car.name}</td>
             <td>${car.bodyType}</td>
+            <td class="price-cell">${car.price.toLocaleString()} Birr</td>
             <td>
-                <button>Delete</button>
+                <div class="action-buttons">
+                    <button class="btn-edit" onclick="editInventory(${car.id})">
+                        <img src="assets/icons/pen.svg" alt="edit"  class="action-img" />
+                    </button>
+                    <button class="btn-delete" onclick="deleteInventory(${car.id})"> 
+                        <img src="assets/icons/trash-can.svg" alt="delete" class="action-img" />
+                    </button>
+                </div>
             </td>
-        </tr>
-    `).join('');
+        </tr>`).join('');
 }
 
-function save() {
+const saveInventory = () => {
     localStorage.setItem('autoNestCars', JSON.stringify(inventory));
-    renderTable();
+    renderInventory();
 }
+
+const deleteInventory = (id) => {
+    inventory = inventory.filter(car => car.id !== id);
+    saveInventory();
+}
+
+window.deleteInventory = deleteInventory;
+
+const editInventory = (id) => {
+    const car = inventory.find(c => c.id === id);
+    if (!car) return;
+
+    document.getElementById('modalTitle').innerText = "Edit Vehicle";
+
+    document.getElementById('edit-id').value = car.id;
+    document.getElementById('brand').value = car.brand;
+    document.getElementById('name').value = car.name;
+    document.getElementById('price').value = car.price;
+    document.getElementById('fuelType').value = car.fuelType;
+    document.getElementById('bodyType').value = car.bodyType;
+    document.getElementById('transmission').value = car.transmission;
+    document.getElementById('isUsed').checked = car.isUsed;
+    document.getElementById('isPopular').checked = car.isPopular;
+    document.getElementById('isLuxury').checked = car.isLuxury;
+    document.getElementById('features').value = car.features ? car.features.join(', ') : '';
+
+    document.getElementById('formModal').style.display = 'flex';
+};
+
+window.editInventory = editInventory;
+
+// Booking
+let bookings = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. NAVIGATION LOGIC ---
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.content-section');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = link.getAttribute('data-section');
-
-            // Toggle active class on sidebar
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            // Hide all sections and show the target one
-            sections.forEach(sec => sec.style.display = 'none');
-
-            const targetID = `${target}-section`;
-            const targetElement = document.getElementById(targetID);
-            if (targetElement) {
-                targetElement.style.display = 'block';
-
-                // If the user clicks Settings, load their data
-                if (target === 'settings') {
-                    loadAdminData();
-                }
-            }
-        });
-    });
-
-    // --- 2. SETTINGS UI ACTIONS ---
-    const btnChangePass = document.getElementById('btn-change-pass');
-    const newPassFields = document.getElementById('new-password-fields');
-
-    if (btnChangePass) {
-        btnChangePass.addEventListener('click', () => {
-            const isHidden = newPassFields.style.display === 'none';
-            newPassFields.style.display = isHidden ? 'block' : 'none';
-            btnChangePass.textContent = isHidden ? 'Cancel' : 'Change';
-        });
+    const savedBookings = localStorage.getItem('autoNestBookings');
+    if (savedBookings) {
+        bookings = JSON.parse(savedBookings);
     }
-
-    // --- 3. DATA PERSISTENCE ---
-    const btnSave = document.getElementById('btn-save-settings');
-    if (btnSave) btnSave.addEventListener('click', saveAdminData);
-
-    const logoutBtn = document.getElementById('btn-settings-logout');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            if (confirm("Logout from Admin Panel?")) window.location.href = 'login.html';
-        });
+    else {
+        bookings = [
+            { id: 101, customerName: "Abebe", carName: "Toyota", phone: "0911223344", date: "2023-12-25", status: "Pending" },
+            { id: 102, customerName: "Biruk", carName: "Lada", phone: "0922334455", date: "2023-12-26", status: "Confirmed" },
+            { id: 103, customerName: "Kebede", carName: "Hyundai", phone: "0933445566", date: "2023-12-27", status: "Cancelled" },
+        ];
+        localStorage.setItem('autoNestBookings', JSON.stringify(bookings));
     }
+    renderBookings();
 });
 
-/**
- * Loads data from LocalStorage and populates the Settings fields
- */
-function loadAdminData() {
-    const savedUser = JSON.parse(localStorage.getItem('currentUser')) || {
-        name: "Admin User",
-        email: "admin@autonest.com",
-        preferences: { notifications: true, maintenance: false, alerts: true },
-        currency: "ETB"
-    };
+const renderBookings = () => {
+    const tbody = document.getElementById('admin-booking-list');
+    if (!tbody) return;
 
-    document.getElementById('admin-name').value = savedUser.name;
-    document.getElementById('admin-email').value = savedUser.email;
-    document.getElementById('pref-notifications').checked = savedUser.preferences.notifications;
-    document.getElementById('pref-maintenance').checked = savedUser.preferences.maintenance;
-    document.getElementById('pref-alerts').checked = savedUser.preferences.alerts;
-    document.getElementById('currency-select').value = savedUser.currency;
-}
+    tbody.innerHTML = bookings.map(book => {
+        return `
+            <tr class="inventory-row">
+                <td>${book.customerName}</td>
+                <td>${book.carName}</td>
+                <td>${book.phone}</td>
+                <td>${book.date}</td>
+                <td>
+                    <span class="status ${book.status.toLowerCase()}">
+                        ${book.status}
+                    </span>
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <button type="button" class="btn-confirm" onclick="updateStatus(${book.id}, 'Confirmed')">
+                            <img src="assets/icons/check.svg" alt="confirm" class="action-img" />
+                        </button>
+                        
+                        <button type="button" class="btn-cancel-status" onclick="updateStatus(${book.id}, 'Cancelled')">
+                            <img src="assets/icons/x-mark.svg" alt="cancel" class="action-img" />
+                        </button>
 
-/**
- * Saves all current Settings inputs into LocalStorage
- */
-function saveAdminData() {
-    const updatedUser = {
-        name: document.getElementById('admin-name').value,
-        email: document.getElementById('admin-email').value,
-        currency: document.getElementById('currency-select').value,
-        preferences: {
-            notifications: document.getElementById('pref-notifications').checked,
-            maintenance: document.getElementById('pref-maintenance').checked,
-            alerts: document.getElementById('pref-alerts').checked
-        }
-    };
+                        <button type="button" class="btn-delete-perm" onclick="deleteBooking(${book.id})">
+                            <img src="assets/icons/trash-can.svg" alt="delete" class="action-img" />
+                        </button>
+                    </div>
+                </td>
+            </tr>`;
+    }).join('');
+};
 
-    const newPass = document.getElementById('new-pass').value;
-    if (newPass.trim() !== "") {
-        updatedUser.password = newPass; // In a real app, you'd hash this!
+const saveBooking = () => {
+    localStorage.setItem('autoNestBookings', JSON.stringify(bookings));
+    renderBookings();
+};
+
+const updateStatus = (id, newStatus) => {
+    const bookingIndex = bookings.findIndex(booking => Number(booking.id) === Number(id));
+    if (bookingIndex !== -1) {
+        bookings[bookingIndex].status = newStatus;
+        saveBooking();
     }
+};
 
-    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
-    alert("Settings updated successfully!");
-}
+const deleteBooking = (id) => {
+    bookings = bookings.filter(booking => Number(booking.id) !== Number(id));
+    saveBooking();
+};
+
+window.updateStatus = updateStatus;
+window.deleteBooking = deleteBooking;

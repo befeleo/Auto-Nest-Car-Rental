@@ -5,6 +5,7 @@ const tabLinks = document.querySelectorAll('.tab-link a');
 const tabPanels = document.querySelectorAll('.tab-panel');
 const brandCard = document.querySelectorAll('.brand-card');
 const filterOptions = document.querySelectorAll('.filter-option');
+const backToTopButton = document.getElementById("back-to-top");
 
 toggleBtn.addEventListener('click', () => {
     moreBrands.style.display = (moreBrands.style.display === 'grid') ? 'none' : 'grid';
@@ -72,3 +73,23 @@ async function loadPopularCars() {
 }
 
 loadPopularCars();
+
+backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+}
+

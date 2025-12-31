@@ -20,6 +20,25 @@ body {
   padding: 25px;
 }
 
+.nav-link {
+  margin: 8px 0;
+  text-decoration: none;
+  color: #a2a2c2;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.admin-sidebar #admin-nav .nav-link.active {
+  background-color: #ff4d4d;
+  color: #ffffff;
+}
+
 .main-body-wrapper {
   background-color: #f4f4f4;
 }
@@ -91,6 +110,7 @@ main {
   align-items: center;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -501,4 +521,28 @@ select#currency-select {
 
 .update-setting:hover {
   background: #e94560;
+}
+
+.under-construction {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 2px dashed #ccc;
+}
+
+.construction-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.under-construction h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.under-construction p {
+  color: #666;
+  margin-bottom: 20px;
 }

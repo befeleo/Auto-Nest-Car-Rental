@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 allSections.forEach(section => section.classList.remove('active-section'));
                 targetSection.classList.add('active-section');
+
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
             }
         });
     });

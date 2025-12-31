@@ -1,9 +1,11 @@
+const popularCarGrid = document.getElementById('popular-car-grid');
 const toggleBtn = document.getElementById('toggleBtn');
 const moreBrands = document.getElementById('more-brands');
 const tabLinks = document.querySelectorAll('.tab-link a');
 const tabPanels = document.querySelectorAll('.tab-panel');
 const brandCard = document.querySelectorAll('.brand-card');
 const filterOptions = document.querySelectorAll('.filter-option');
+const backToTopButton = document.getElementById("back-to-top");
 
 toggleBtn.addEventListener('click', () => {
     moreBrands.style.display = (moreBrands.style.display === 'grid') ? 'none' : 'grid';
@@ -43,3 +45,51 @@ filterOptions.forEach(filter => {
         redirectToFilter(filterValue);
     });
 });
+
+async function loadPopularCars() {
+    const carData = 'data/cars.json';
+
+    try {
+        const response = await fetch(carData);
+        const allCars = await response.json();
+
+        const popularCars = allCars.filter(car => car.isPopular === true).slice(0, 8);
+        popularCarGrid.innerHTML = ""
+
+        popularCars.forEach(car => {
+            const carCard = document.createElement('div');
+            carCard.className = 'popular-car-card';
+
+            carCard.innerHTML = `
+                <img src="${car.image}" alt="${car.brand} ${car.name}">
+                <h3>${car.brand} ${car.name}</h3>
+                <p class="price">${car.price} Birr</p>
+            `;
+            popularCarGrid.appendChild(carCard);
+        });
+    } catch (error) {
+        console.error("Could not load popular cars:", error);
+    }
+}
+
+loadPopularCars();
+
+backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+window.onscroll = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+}
+

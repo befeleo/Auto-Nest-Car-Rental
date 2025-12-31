@@ -21,7 +21,6 @@
           </ul>
         </div>
       </nav>
-
       <div class="hero-content">
         <h1>Auto Nest Car <span>Rental</span></h1>
         <p>
@@ -32,7 +31,7 @@
       </div>
     </header>
 
-    <section class="about-us-section">
+    <section id="about-us" class="about-us-section">
       <div class="card">
         <h1>About Us</h1>
         <p>
@@ -58,77 +57,7 @@
     <!-- Popular Cars -->
     <section class="car-section popular-cars-section">
       <h2>POPULAR NEW CARS</h2>
-
-      <div class="car-grid">
-        <div class="car-card">
-          <img
-            src="assets/images/range-rover-right-front-three-quarter.webp"
-            alt="range rover"
-          />
-          <h3>Land Rover Range Rover</h3>
-          <p class="price">5.76M- 8.60M birr</p>
-        </div>
-        <div class="car-card">
-          <img
-            src="assets/images/urban-cruiser-hyryder-right-front-three-quarter.webp"
-            alt="Toyota Urban Cruiser Hyryder"
-          />
-          <h3>Toyota Urban Cruiser Hyryder</h3>
-          <p class="price">10.95M - 19.76M birr</p>
-        </div>
-
-        <div class="car-card">
-          <img
-            src="assets/images/triber-right-front-three-quarter.webp"
-            alt="Renault Triber"
-          />
-          <h3>Renault Triber</h3>
-          <p class="price">10.73M - 20.20M birr</p>
-        </div>
-
-        <div class="car-card">
-          <img
-            src="assets/images/bolero-right-front-three-quarter.webp"
-            alt="bolera"
-          />
-          <h3>Mahindara Bolera</h3>
-          <p class="price">7.90M - 15.69M birr</p>
-        </div>
-        <div class="car-card">
-          <img
-            src="assets/images/land-cruiser-exterior-right-front-three-quarter-3.webp"
-            alt="land cruiser"
-          />
-          <h3>Toyota Land Cruiser</h3>
-          <p class="price">9.76M- 35.60M birr</p>
-        </div>
-        <div class="car-card">
-          <img
-            src="assets/images/hilux-right-front-three-quarter.webp"
-            alt="Toyota Hilux"
-          />
-          <h3>Toyota Hilux</h3>
-          <p class="price">2.95M - 9.76M birr</p>
-        </div>
-
-        <div class="car-card">
-          <img
-            src="assets/images/a-class-limousine-right-front-three-quarter-2.webp"
-            alt="marchedis"
-          />
-          <h3>Mercedes-Benz A-Class Limousine</h3>
-          <p class="price">19.73M - 42.20M birr</p>
-        </div>
-
-        <div class="car-card">
-          <img
-            src="assets/images/3-series-lwb-right-front-three-quarter.webp"
-            alt="BMW"
-          />
-          <h3>BMW 3 Series LWB</h3>
-          <p class="price">34.90M - 45.69M birr</p>
-        </div>
-      </div>
+      <div class="popular-car-grid" id="popular-car-grid"></div>
     </section>
 
     <!-- Brands -->
@@ -353,34 +282,34 @@
             <!-- Price range tab -->
             <div id="price-range" class="tab-panel active">
               <div class="filter-options">
-                <div class="filter-option price-option">
+                <div class="filter-option price-option" data-filter="range-1">
                   <a href="#">
-                    <span>Price 1</span>
+                    <span class="price-range">Under 2000 ETB</span>
                   </a>
                 </div>
-                <div class="filter-option price-option">
+                <div class="filter-option price-option" data-filter="range-2">
                   <a href="#">
-                    <span>Price 2</span>
+                    <span class="price-range">2,000 - 3,000 ETB</span>
                   </a>
                 </div>
-                <div class="filter-option price-option">
+                <div class="filter-option price-option" data-filter="range-3">
                   <a href="#">
-                    <span>Price 3</span>
+                    <span class="price-range">3,000 - 4,000 ETB</span>
                   </a>
                 </div>
-                <div class="filter-option price-option">
+                <div class="filter-option price-option" data-filter="range-4">
                   <a href="#">
-                    <span>Price 4</span>
+                    <span class="price-range">4,000 - 5,000 ETB</span>
                   </a>
                 </div>
-                <div class="filter-option price-option">
+                <div class="filter-option price-option" data-filter="range-5">
                   <a href="#">
-                    <span>Price 5</span>
+                    <span class="price-range">5,000 - 6,000 ETB</span>
                   </a>
                 </div>
-                <div class="filter-option price-option">
+                <div class="filter-option price-option" data-filter="range-6">
                   <a href="#">
-                    <span>Price 6</span>
+                    <span class="price-range">Above 6,000 ETB</span>
                   </a>
                 </div>
               </div>
@@ -389,22 +318,22 @@
             <!-- Fuel type tab-->
             <div id="fuel-type" class="tab-panel">
               <div class="filter-options">
-                <div class="filter-option fuel-option">
+                <div class="filter-option fuel-option" data-filter="petrol">
                   <a href="#">
                     <span>Petrol</span>
                   </a>
                 </div>
-                <div class="filter-option fuel-option">
+                <div class="filter-option fuel-option" data-filter="diesel">
                   <a href="#">
                     <span>Diesel</span>
                   </a>
                 </div>
-                <div class="filter-option fuel-option">
+                <div class="filter-option fuel-option" data-filter="electric">
                   <a href="#">
                     <span>Electric</span>
                   </a>
                 </div>
-                <div class="filter-option fuel-option">
+                <div class="filter-option fuel-option" data-filter="hybrid">
                   <a href="#">
                     <span>Hybrid</span>
                   </a>
@@ -415,34 +344,24 @@
             <!-- Body type tab -->
             <div id="body-type" class="tab-panel">
               <div class="filter-options">
-                <div class="filter-option body-option">
+                <div class="filter-option body-option" data-filter="sedan">
                   <a href="#">
-                    <span>Body type 1</span>
+                    <span>Sedan</span>
                   </a>
                 </div>
-                <div class="filter-option body-option">
+                <div class="filter-option body-option" data-filter="suv">
                   <a href="#">
-                    <span>Body type 2</span>
+                    <span>SUV</span>
                   </a>
                 </div>
-                <div class="filter-option body-option">
+                <div class="filter-option body-option" data-filter="pickup">
                   <a href="#">
-                    <span>Body type 3</span>
+                    <span>Pickup</span>
                   </a>
                 </div>
-                <div class="filter-option body-option">
+                <div class="filter-option body-option" data-filter="hatchback">
                   <a href="#">
-                    <span>Body type 4</span>
-                  </a>
-                </div>
-                <div class="filter-option body-option">
-                  <a href="#">
-                    <span>Body type 5</span>
-                  </a>
-                </div>
-                <div class="filter-option body-option">
-                  <a href="#">
-                    <span>Body type 6</span>
+                    <span>Hatchback</span>
                   </a>
                 </div>
               </div>
@@ -451,34 +370,44 @@
             <!-- More type tab -->
             <div id="more" class="tab-panel">
               <div class="filter-options">
-                <div class="filter-option more-option">
+                <div class="filter-option more-option" data-filter="popular">
                   <a href="#">
-                    <span>More option</span>
+                    <span>Popular</span>
                   </a>
                 </div>
-                <div class="filter-option more-option">
+                <div class="filter-option more-option" data-filter="luxury">
                   <a href="#">
-                    <span>More option</span>
+                    <span>Luxury</span>
                   </a>
                 </div>
-                <div class="filter-option more-option">
+                <div class="filter-option more-option" data-filter="used">
                   <a href="#">
-                    <span>More option</span>
+                    <span>Used</span>
                   </a>
                 </div>
-                <div class="filter-option more-option">
+                <div class="filter-option more-option" data-filter="new">
                   <a href="#">
-                    <span>More option</span>
+                    <span>New</span>
                   </a>
                 </div>
-                <div class="filter-option more-option">
+                <div class="filter-option more-option" data-filter="automatic">
                   <a href="#">
-                    <span>More option</span>
+                    <span>Automatic</span>
                   </a>
                 </div>
-                <div class="filter-option more-option">
+                <div class="filter-option more-option" data-filter="manual">
                   <a href="#">
-                    <span>More option</span>
+                    <span>Manual</span>
+                  </a>
+                </div>
+                <div class="filter-option more-option" data-filter="seats-5">
+                  <a href="#">
+                    <span>5 Seats</span>
+                  </a>
+                </div>
+                <div class="filter-option more-option" data-filter="seats-7">
+                  <a href="#">
+                    <span>7 Seats</span>
                   </a>
                 </div>
               </div>
@@ -487,6 +416,10 @@
         </div>
       </div>
     </section>
+
+    <button type="button" id="back-to-top">
+      <img src="assets/icons/arrow-circle-up.svg" alt="back to top" />
+    </button>
 
     <!-- Footer -->
     <footer>

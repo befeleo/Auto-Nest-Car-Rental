@@ -1,3 +1,4 @@
+const popularCarGrid = document.getElementById('popular-car-grid');
 const toggleBtn = document.getElementById('toggleBtn');
 const moreBrands = document.getElementById('more-brands');
 const tabLinks = document.querySelectorAll('.tab-link a');
@@ -43,3 +44,31 @@ filterOptions.forEach(filter => {
         redirectToFilter(filterValue);
     });
 });
+
+async function loadPopularCars() {
+    const carData = 'data/cars.json';
+
+    try {
+        const response = await fetch(carData);
+        const allCars = await response.json();
+
+        const popularCars = allCars.filter(car => car.isPopular === true).slice(0, 8);
+        popularCarGrid.innerHTML = ""
+
+        popularCars.forEach(car => {
+            const carCard = document.createElement('div');
+            carCard.className = 'popular-car-card';
+
+            carCard.innerHTML = `
+                <img src="${car.image}" alt="${car.brand} ${car.name}">
+                <h3>${car.brand} ${car.name}</h3>
+                <p class="price">${car.price} Birr</p>
+            `;
+            popularCarGrid.appendChild(carCard);
+        });
+    } catch (error) {
+        console.error("Could not load popular cars:", error);
+    }
+}
+
+loadPopularCars();

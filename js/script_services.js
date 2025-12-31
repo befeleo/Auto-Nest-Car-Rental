@@ -72,6 +72,17 @@ function matchesCar(car, query) {
     if (!query) return true;
     const q = query.toLowerCase();
 
+    if (q.startsWith('range-')) {
+        const price = Number(car.price);
+        switch (q) {
+            case 'range-1': return price < 2000;
+            case 'range-2': return price >= 2000 && price < 3000;
+            case 'range-3': return price >= 3000 && price < 4000;
+            case 'range-4': return price >= 4000 && price < 5000;
+            case 'range-5': return price >= 5000 && price < 6000;
+            case 'range-6': return price >= 6000;
+        }
+    }
     return (
         car.name.toLowerCase().includes(q) ||
         car.brand.toLowerCase().includes(q) ||

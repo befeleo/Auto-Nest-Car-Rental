@@ -139,18 +139,10 @@ window.editInventory = editInventory;
 let bookings = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const savedBookings = localStorage.getItem('autoNestBookings');
-    if (savedBookings) {
+    const savedBookings = localStorage.getItem('carBookings');
+    if (savedBookings)
         bookings = JSON.parse(savedBookings);
-    }
-    else {
-        bookings = [
-            { id: 101, customerName: "Abebe", carName: "Toyota", phone: "0911223344", date: "2023-12-25", status: "Pending" },
-            { id: 102, customerName: "Biruk", carName: "Lada", phone: "0922334455", date: "2023-12-26", status: "Confirmed" },
-            { id: 103, customerName: "Kebede", carName: "Hyundai", phone: "0933445566", date: "2023-12-27", status: "Cancelled" },
-        ];
-        localStorage.setItem('autoNestBookings', JSON.stringify(bookings));
-    }
+    localStorage.setItem('carBookings', JSON.stringify(bookings));
     renderBookings();
 });
 
@@ -159,12 +151,18 @@ const renderBookings = () => {
     if (!tbody) return;
 
     tbody.innerHTML = bookings.map(book => {
+
+        const customer = book.fullName || book.customerName || "Unknown";
+        const vehicle = book.carName || "Unknown Car";
+        const phone = book.phone || "N/A";
+        const date = book.pickupDate || book.date || "N/A";
+
         return `
             <tr class="inventory-row">
-                <td>${book.customerName}</td>
-                <td>${book.carName}</td>
-                <td>${book.phone}</td>
-                <td>${book.date}</td>
+                <td>${customer}</td>
+                <td>${vehicle}</td>
+                <td>${phone}</td>
+                <td>${date}</td>
                 <td>
                     <span class="status ${book.status.toLowerCase()}">
                         ${book.status}
@@ -190,7 +188,7 @@ const renderBookings = () => {
 };
 
 const saveBooking = () => {
-    localStorage.setItem('autoNestBookings', JSON.stringify(bookings));
+    localStorage.setItem('carBookings', JSON.stringify(bookings));
     renderBookings();
 };
 

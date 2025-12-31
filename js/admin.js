@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetSection) {
                 e.preventDefault();
 
-
                 allSections.forEach(section => section.classList.remove('active-section'));
                 targetSection.classList.add('active-section');
             }
@@ -207,3 +206,16 @@ const deleteBooking = (id) => {
 
 window.updateStatus = updateStatus;
 window.deleteBooking = deleteBooking;
+
+// Setting
+const photoUpload = document.getElementById('admin-photo-upload');
+const profilePreview = document.getElementById('profile-img-preview');
+
+photoUpload.addEventListener('change', () => {
+    const [file] = photoUpload.files;
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (img) => profilePreview.src = img.target.result;
+        reader.readAsDataURL(file);
+    }
+});

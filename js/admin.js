@@ -192,11 +192,7 @@ const saveBooking = () => {
     renderBookings();
 };
 
-const updateStatus = (e, id, newStatus) => {
-    if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
+const updateStatus = (id, newStatus) => {
     const bookingIndex = bookings.findIndex(booking => Number(booking.id) === Number(id));
     if (bookingIndex !== -1) {
         bookings[bookingIndex].status = newStatus;
@@ -205,7 +201,6 @@ const updateStatus = (e, id, newStatus) => {
 };
 
 const deleteBooking = (id) => {
-
     bookings = bookings.filter(booking => Number(booking.id) !== Number(id));
     saveBooking();
 };

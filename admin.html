@@ -56,7 +56,7 @@
           </a>
 
           <div class="sidebar-footer">
-            <a href="#" class="logout-link">
+            <a href="#" class="nav-link" data-section="logout">
               <img
                 src="assets/icons/arrow-right-from-bracket-solid.svg"
                 alt="logout"
@@ -133,6 +133,16 @@
             <header class="inventory-header">
               <h1>Manage Customers</h1>
             </header>
+
+            <div class="under-construction">
+              <div class="construction-icon">🚧</div>
+              <h2>Section Under Construction</h2>
+              <p>
+                We are currently working on the customer management system. This
+                feature will be available soon!
+              </p>
+              <a href="index.html" class="toggle-btn">Back to Home</a>
+            </div>
           </div>
 
           <div id="setting-section" class="content-section">
@@ -190,7 +200,7 @@
                   </label>
                 </div>
                 <h4 class="currency-format-heading">Currency Format</h4>
-                <select id="currency-select">
+                <select id="currency-select" title="currency-select">
                   <option value="ETB">Ethiopian Birr (Br)</option>
                   <option value="USD">USD ($)</option>
                 </select>
@@ -289,9 +299,9 @@
                 </div>
 
                 <div class="checkbox-group">
-                  <label><input type="checkbox" id="isUsed" /> Used </label>
+                  <label><input type="checkbox" id="isUsed" /> Used</label>
                   <label>
-                    <input type="checkbox" id="isPopular" />Popular
+                    <input type="checkbox" id="isPopular" /> Popular
                   </label>
                   <label>
                     <input type="checkbox" id="isLuxury" /> Luxury Fleet

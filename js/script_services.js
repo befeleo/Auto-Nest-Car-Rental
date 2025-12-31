@@ -83,6 +83,15 @@ function matchesCar(car, query) {
             case 'range-6': return price >= 6000;
         }
     }
+    if (q === 'popular') return car.isPopular === true;
+    if (q === 'used') return car.isUsed === true;
+    if (q === 'new') return car.isUsed === false;
+    if (q === 'luxury') return car.isLuxury === true;
+    if (q === 'automatic') return car.transmission.toLowerCase() === 'automatic';
+    if (q === 'manual') return car.transmission.toLowerCase() === 'manual';
+    if (q === 'seats-5') return Number(car.seats) === 5;
+    if (q === 'seats-7') return Number(car.seats) === 7;
+
     return (
         car.name.toLowerCase().includes(q) ||
         car.brand.toLowerCase().includes(q) ||

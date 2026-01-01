@@ -11,32 +11,42 @@
 
 </head>
 
-<body>
+<body class="admin-page">
 
     <div class="admin-wrapper">
 
         <aside class="admin-sidebar">
             <div class="logo">Auto Nest <span>Admin</span></div>
-
             <nav id="admin-nav">
-                <a href="#" class="nav-link active">
-                    <img src="assets/icons/chart-simple-solid.svg" class="nav-icon" />
-                    Dashboard
+                <a href="#" class="nav-link active" data-section="dashboard">
+                    <img src="assets/icons/chart-simple-solid.svg" alt="" class="nav-icon" />Dashboard
                 </a>
-                <a href="#" class="nav-link">
-                    <img src="assets/icons/car-side-solid.svg" class="nav-icon" />
-                    Inventory
+                <a href="admin.html" class="nav-link" data-section="inventory">
+                    <img src="assets/icons/car-side-solid.svg" alt="car" class="nav-icon" />Manage Inventory
                 </a>
-                <a href="#" class="nav-link">
-                    <img src="assets/icons/calendar-solid.svg" class="nav-icon" />
-                    Bookings
+                <a href="#" class="nav-link" data-section="bookings">
+                    <img src="assets/icons/calendar-solid.svg" alt="book" class="nav-icon" />Bookings
                 </a>
-                <a href="#" class="nav-link">
-                    <img src="assets/icons/users-solid.svg" class="nav-icon" />
-                    Customers
+                <a href="#" class="nav-link" data-section="customers">
+                    <img src="assets/icons/users-solid.svg" alt="customers" class="nav-icon" />Customers
                 </a>
+                <a href="index.html" class="nav-link" data-section="site">
+                    <img src="assets/icons/globe-solid.svg" alt="website" class="nav-icon" />View Site
+                </a>
+
+                <a href="#" class="nav-link" data-section="setting">
+                    <img src="assets/icons/gear-solid.svg" alt="setting" class="nav-icon" />Settings
+                </a>
+
+                <div class="sidebar-footer">
+                    <a href="#" class="nav-link" data-section="logout" id="logoutBtn">
+                        <img src="assets/icons/arrow-right-from-bracket-solid.svg" alt="logout"
+                            class="nav-icon" />Logout
+                    </a>
+                </div>
             </nav>
         </aside>
+
 
         <div class="main-body-wrapper">
 

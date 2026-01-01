@@ -4,11 +4,6 @@
     "name": "Corolla",
     "brand": "Toyota",
     "image": "assets/images/car_images/toyota corolla.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/toyota corolla interior.png",
-      "side": "assets/images/car_images/details/toyota corolla side.png",
-      "dashboard": "assets/images/car_images/details/toyota corolla dashboard.png"
-    },
     "price": 2000,
     "dailyRate": 2000,
     "fuelType": "Petrol",
@@ -47,11 +42,6 @@
     "name": "Elantra",
     "brand": "Hyundai",
     "image": "assets/images/car_images/hyundai elantra.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/hyundai elantra interior.png",
-      "side": "assets/images/car_images/details/hyundai elantra side.png",
-      "dashboard": "assets/images/car_images/details/hyundai elantra dashboard.png"
-    },
     "price": 2300,
     "dailyRate": 2300,
     "fuelType": "Petrol",
@@ -89,11 +79,6 @@
     "name": "Seagull",
     "brand": "BYD",
     "image": "assets/images/car_images/BYD seagull.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/BYD seagull interior.png",
-      "side": "assets/images/car_images/details/BYD seagull side.png",
-      "dashboard": "assets/images/car_images/details/BYD seagull dashboard.png"
-    },
     "price": 2500,
     "dailyRate": 2500,
     "fuelType": "Electric",
@@ -131,11 +116,6 @@
     "name": "RAV4",
     "brand": "Toyota",
     "image": "assets/images/car_images/Toyota RAV4.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/Toyota RAV4 interior.png",
-      "side": "assets/images/car_images/details/Toyota RAV4 side.png",
-      "dashboard": "assets/images/car_images/details/Toyota RAV4 dashboard.png"
-    },
     "price": 4500,
     "dailyRate": 4500,
     "fuelType": "Petrol",
@@ -173,11 +153,6 @@
     "name": "C180",
     "brand": "Mercedes",
     "image": "assets/images/car_images/c180.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/mercedes c180 interior.png",
-      "side": "assets/images/car_images/details/mercedes c180 side.png",
-      "dashboard": "assets/images/car_images/details/mercedes c180 dashboard.png"
-    },
     "price": 3500,
     "dailyRate": 3500,
     "fuelType": "Benzene",
@@ -214,11 +189,6 @@
     "name": "Dezire",
     "brand": "Suzuki",
     "image": "assets/images/car_images/Dezire.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/suzuki dezire interior.png",
-      "side": "assets/images/car_images/details/suzuki dezire side.png",
-      "dashboard": "assets/images/car_images/details/suzuki dezire dashboard.png"
-    },
     "price": 1800,
     "dailyRate": 1800,
     "fuelType": "Benzene",
@@ -255,11 +225,6 @@
     "name": "Dashing",
     "brand": "JETOUR",
     "image": "assets/images/car_images/dashing.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/jetour dashing interior.png",
-      "side": "assets/images/car_images/details/jetour dashing side.png",
-      "dashboard": "assets/images/car_images/details/jetour dashing dashboard.png"
-    },
     "price": 5000,
     "dailyRate": 5000,
     "fuelType": "Petrol",
@@ -302,11 +267,6 @@
     "name": "ID.4",
     "brand": "Volkswagen",
     "image": "assets/images/car_images/id4.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/vw id4 interior.png",
-      "side": "assets/images/car_images/details/vw id4 side.png",
-      "dashboard": "assets/images/car_images/details/vw id4 dashboard.png"
-    },
     "price": 5500,
     "dailyRate": 5500,
     "fuelType": "Electric",
@@ -345,11 +305,6 @@
     "name": "3 Series",
     "brand": "BMW",
     "image": "assets/images/car_images/bmw3.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/bmw 3 series interior.png",
-      "side": "assets/images/car_images/details/bmw 3 series side.png",
-      "dashboard": "assets/images/car_images/details/bmw 3 series dashboard.png"
-    },
     "price": 5200,
     "dailyRate": 5200,
     "fuelType": "Petrol",
@@ -387,11 +342,6 @@
     "name": "Yaris",
     "brand": "Toyota",
     "image": "assets/images/car_images/yaris.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/toyota yaris interior.png",
-      "side": "assets/images/car_images/details/toyota yaris side.png",
-      "dashboard": "assets/images/car_images/details/toyota yaris dashboard.png"
-    },
     "price": 1100,
     "dailyRate": 1100,
     "fuelType": "Petrol",
@@ -428,11 +378,6 @@
     "name": "Tucson",
     "brand": "Hyundai",
     "image": "assets/images/car_images/hyundai tucson.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/hyundai tucson interior.png",
-      "side": "assets/images/car_images/details/hyundai tucson side.png",
-      "dashboard": "assets/images/car_images/details/hyundai tucson dashboard.png"
-    },
     "price": 5000,
     "dailyRate": 5000,
     "fuelType": "Petrol",
@@ -469,11 +414,6 @@
     "name": "X-Trail",
     "brand": "Nissan",
     "image": "assets/images/car_images/Nissan X-Trail.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/nissan x-trail interior.png",
-      "side": "assets/images/car_images/details/nissan x-trail side.png",
-      "dashboard": "assets/images/car_images/details/nissan x-trail dashboard.png"
-    },
     "price": 3400,
     "dailyRate": 3400,
     "fuelType": "Petrol",
@@ -510,11 +450,6 @@
     "name": "Sportage",
     "brand": "Kia",
     "image": "assets/images/car_images/sportage.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/kia sportage interior.png",
-      "side": "assets/images/car_images/details/kia sportage side.png",
-      "dashboard": "assets/images/car_images/details/kia sportage dashboard.png"
-    },
     "price": 4050,
     "dailyRate": 4050,
     "fuelType": "Petrol",
@@ -551,11 +486,6 @@
     "name": "Model Y",
     "brand": "Tesla",
     "image": "assets/images/car_images/teslay.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/tesla model y interior.png",
-      "side": "assets/images/car_images/details/tesla model y side.png",
-      "dashboard": "assets/images/car_images/details/tesla model y dashboard.png"
-    },
     "price": 7000,
     "dailyRate": 7000,
     "fuelType": "Electric",
@@ -593,11 +523,6 @@
     "name": "Leaf",
     "brand": "Nissan",
     "image": "assets/images/car_images/leaf.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/nissan leaf interior.png",
-      "side": "assets/images/car_images/details/nissan leaf side.png",
-      "dashboard": "assets/images/car_images/details/nissan leaf dashboard.png"
-    },
     "price": 2900,
     "dailyRate": 2900,
     "fuelType": "Electric",
@@ -634,11 +559,6 @@
     "name": "F-150",
     "brand": "Ford",
     "image": "assets/images/car_images/Fordf15.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/ford_f150_interior.png",
-      "side": "assets/images/car_images/details/ford_f150_side.png",
-      "dashboard": "assets/images/car_images/details/ford_f150_dashboard.png"
-    },
     "price": 8500,
     "dailyRate": 3500,
     "fuelType": "Petrol",
@@ -674,11 +594,6 @@
     "name": "Pajero",
     "brand": "Mitsubishi",
     "image": "assets/images/car_images/Mitsubushi pajero.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/pajero_interior.png",
-      "side": "assets/images/car_images/details/pajero_side.png",
-      "dashboard": "assets/images/car_images/details/pajero_dashboard.png"
-    },
     "price": 4800,
     "dailyRate": 2200,
     "fuelType": "Diesel",
@@ -714,11 +629,6 @@
     "name": "T30",
     "brand": "Isuzu",
     "image": "assets/images/car_images/isuzuT30.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/isuzu_t30_interior.png",
-      "side": "assets/images/car_images/details/isuzu_t30_side.png",
-      "dashboard": "assets/images/car_images/details/isuzu_t30_dashboard.png"
-    },
     "price": 7200,
     "dailyRate": 3800,
     "fuelType": "Diesel",
@@ -754,11 +664,6 @@
     "name": "Daily",
     "brand": "Iveco",
     "image": "assets/images/car_images/Iveco Daily.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/iveco_daily_interior.png",
-      "side": "assets/images/car_images/details/iveco_daily_side.png",
-      "dashboard": "assets/images/car_images/details/iveco_daily_dashboard.png"
-    },
     "price": 8500,
     "dailyRate": 4500,
     "fuelType": "Diesel",
@@ -794,11 +699,6 @@
     "name": "Tiggo 8",
     "brand": "Chery",
     "image": "assets/images/car_images/cherry.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/chery_tiggo8_interior.png",
-      "side": "assets/images/car_images/details/chery_tiggo8_side.png",
-      "dashboard": "assets/images/car_images/details/chery_tiggo8_dashboard.png"
-    },
     "price": 7800,
     "dailyRate": 4200,
     "fuelType": "Petrol",
@@ -834,11 +734,6 @@
     "name": "620",
     "brand": "Lifan",
     "image": "assets/images/car_images/Lifan.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/lifan_620_interior.png",
-      "side": "assets/images/car_images/details/lifan_620_side.png",
-      "dashboard": "assets/images/car_images/details/lifan_620_dashboard.png"
-    },
     "price": 2400,
     "dailyRate": 2400,
     "fuelType": "Petrol",
@@ -874,11 +769,6 @@
     "name": "Punch",
     "brand": "Tata",
     "image": "assets/images/car_images/Tata.png",
-    "detailImage": {
-      "interior": "assets/images/car_images/details/tata_punch_interior.png",
-      "side": "assets/images/car_images/details/tata_punch_side.png",
-      "dashboard": "assets/images/car_images/details/tata_punch_dashboard.png"
-    },
     "price": 2600,
     "dailyRate": 2600,
     "fuelType": "Petrol",

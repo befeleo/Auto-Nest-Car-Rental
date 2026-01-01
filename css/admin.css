@@ -95,6 +95,7 @@ main {
 .content-section {
   display: none;
 }
+
 .active-section {
   display: block !important;
 }
@@ -204,13 +205,11 @@ th {
 }
 
 .btn-edit .action-img {
-  filter: invert(31%) sepia(95%) saturate(2714%) hue-rotate(224deg)
-    brightness(97%) contrast(96%);
+  filter: invert(31%) sepia(95%) saturate(2714%) hue-rotate(224deg) brightness(97%) contrast(96%);
 }
 
 .btn-delete .action-img {
-  filter: invert(42%) sepia(88%) saturate(2238%) hue-rotate(331deg)
-    brightness(101%) contrast(106%);
+  filter: invert(42%) sepia(88%) saturate(2238%) hue-rotate(331deg) brightness(101%) contrast(106%);
 }
 
 #add-car-form {
@@ -308,13 +307,11 @@ th {
 }
 
 .btn-confirm .action-img {
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
-    brightness(118%) contrast(119%);
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
 }
 
 .btn-cancel-status .action-img {
-  filter: invert(27%) sepia(91%) saturate(6452%) hue-rotate(346deg)
-    brightness(104%) contrast(97%);
+  filter: invert(27%) sepia(91%) saturate(6452%) hue-rotate(346deg) brightness(104%) contrast(97%);
 }
 
 .status {
@@ -340,6 +337,7 @@ th {
   background-color: #fee2e2;
   color: #b91c1c;
 }
+
 .settings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -489,6 +487,7 @@ select#currency-select {
   font-weight: 600;
   cursor: pointer;
 }
+
 .btn-switch-account {
   background: #f0f0f5;
   color: #1a1a2e;
@@ -545,4 +544,52 @@ select#currency-select {
 .under-construction p {
   color: #666;
   margin-bottom: 20px;
+}
+
+.profile-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* Makes it circular */
+  overflow: hidden;
+  /* Hides corners of square image */
+  border: 3px solid #4a6fa5;
+  /* Optional border */
+  background-color: #f0f0f0;
+  /* Background for empty state */
+  margin: 0 auto 15px;
+  /* Centers it and adds space below */
+}
+
+.profile-preview img {
+  width: 100%;
+  /* Fills the circle */
+  height: 100%;
+  /* Fills the circle */
+  object-fit: cover;
+  /* Crops image to fit circle without distortion */
+  display: block;
+  /* Removes bottom space under image */
+}
+
+.profile-upload-container {
+  text-align: center;
+  /* Centers everything inside */
+}
+
+#change-admin-photo {
+  display: inline-block;
+  margin-top: 10px;
+  color: #4a6fa5;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#change-admin-photo:hover {
+  color: #2c5282;
+}
+
+#admin-photo-upload {
+  display: none;
+  /* Hide the actual file input */
 }

@@ -108,6 +108,7 @@ nav {
 .hero-content h1 {
   font-size: 36px;
   font-weight: 700;
+  color: var(--text-white);
 }
 
 .hero-content h1 span {
@@ -709,6 +710,12 @@ footer {
     gap: 15px;
   }
 
+  #more-brands {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-top: 20px;
+  }
+
   .brand-card {
     width: 100%;
     height: auto;
@@ -743,4 +750,3 @@ footer {
     gap: 10px;
   }
 }
-

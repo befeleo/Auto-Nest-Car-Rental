@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Auto Nest | Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div class="admin-wrapper">
+
+        <aside class="admin-sidebar">
+            <div class="logo">Auto Nest <span>Admin</span></div>
+
+            <nav id="admin-nav">
+                <a href="#" class="nav-link active">
+                    <img src="assets/icons/chart-simple-solid.svg" class="nav-icon" />
+                    Dashboard
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="assets/icons/car-side-solid.svg" class="nav-icon" />
+                    Inventory
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="assets/icons/calendar-solid.svg" class="nav-icon" />
+                    Bookings
+                </a>
+                <a href="#" class="nav-link">
+                    <img src="assets/icons/users-solid.svg" class="nav-icon" />
+                    Customers
+                </a>
+            </nav>
+        </aside>
+
+        <div class="main-body-wrapper">
+
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+
+            <main>
+
+                <section class="content-section active-section">
+
+                    <div class="dashboard-cards">
+                        <div class="dash-card">
+                            <h4>Total Cars</h4>
+                            <p id="dash-total-cars">0</p>
+                        </div>
+                        <div class="dash-card">
+                            <h4>Total Bookings</h4>
+                            <p id="dash-total-bookings">0</p>
+                        </div>
+                        <div class="dash-card">
+                            <h4>Available Cars</h4>
+                            <p id="dash-available-cars">0</p>
+                        </div>
+                        <div class="dash-card">
+                            <h4>Customers</h4>
+                            <p id="dash-customers">0</p>
+                        </div>
+                    </div>
+
+                    <section id="charts-container" class="dashboard-charts">
+                    </section>
+
+
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

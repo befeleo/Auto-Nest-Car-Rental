@@ -59,11 +59,13 @@ async function loadPopularCars() {
         popularCars.forEach(car => {
             const carCard = document.createElement('div');
             carCard.className = 'popular-car-card';
+
             carCard.style.cursor = 'pointer';
 
             carCard.onclick = () => {
                 window.location.href = `car-details.html?id=${car.id}`;
             };
+
             carCard.innerHTML = `
                 <img src="${car.image}" alt="${car.brand} ${car.name}">
                 <h3>${car.brand} ${car.name}</h3>
@@ -96,4 +98,3 @@ function scrollFunction() {
         backToTopButton.style.display = "none";
     }
 }
-

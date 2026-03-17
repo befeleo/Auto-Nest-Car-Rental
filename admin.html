@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="css/admin.css" />
-    <link
-      rel="shortcut icon"
-      href="assets/favicon/car.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="assets/favicon/car.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.js"></script>
   </head>
+
   <body>
     <div class="admin-wrapper">
       <aside class="admin-sidebar">
@@ -61,7 +60,7 @@
           </a>
 
           <div class="sidebar-footer">
-            <a href="#" class="nav-link" data-section="logout">
+            <a href="#" class="nav-link" data-section="logout" id="logoutBtn">
               <img
                 src="assets/icons/arrow-right-from-bracket-solid.svg"
                 alt="logout"
@@ -82,6 +81,28 @@
             <header class="inventory-header">
               <h1>Dashboard</h1>
             </header>
+            <section class="content-section active-section">
+              <div class="dashboard-cards">
+                <div class="dash-card">
+                  <h4>Total Cars</h4>
+                  <p id="dash-total-cars">0</p>
+                </div>
+                <div class="dash-card">
+                  <h4>Total Bookings</h4>
+                  <p id="dash-total-bookings">0</p>
+                </div>
+                <div class="dash-card">
+                  <h4>Available Cars</h4>
+                  <p id="dash-available-cars">0</p>
+                </div>
+                <div class="dash-card">
+                  <h4>Customers</h4>
+                  <p id="dash-customers">0</p>
+                </div>
+              </div>
+
+              <section id="charts-container" class="dashboard-charts"></section>
+            </section>
           </div>
           <div id="inventory-section" class="content-section">
             <header class="inventory-header">
@@ -181,7 +202,6 @@
                         id="admin-pass-display"
                         value="********"
                         readonly
-                        title="password"
                       />
                       <button type="button" class="btn-text">Change</button>
                     </div>
@@ -334,5 +354,7 @@
       </div>
     </div>
     <script src="js/admin.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>
